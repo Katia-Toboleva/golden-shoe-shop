@@ -5,7 +5,7 @@ import {
 } from '@components';
 
 const Home = () => (
-  //component here
+  <div>App here</div>
 );
 
 export default Home;

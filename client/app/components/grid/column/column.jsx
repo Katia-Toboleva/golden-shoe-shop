@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames/bind';
 
-import styles from './Column.module.scss';
+import styles from './column.scss';
 
 const cx = classnames.bind(styles);
 
