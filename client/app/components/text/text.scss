@@ -1,0 +1,131 @@
+@import 'colors.scss';
+
+.text {
+  &--size-xsmall {
+    font-size: 8px;
+  }
+
+  &--size-small {
+    font-size: 16px;
+  }
+
+  &--size-medium {
+    font-size: 18px;
+  }
+
+  &--size-medium-large {
+    font-size: 24px;
+  }
+
+  &--size-large {
+    font-size: 32px;
+  }
+
+  &--size-xlarge {
+    font-size: 48px;
+  }
+
+  &--size-xxlarge {
+    font-size: 64px;
+  }
+
+  &--weight-thin {
+    font-weight: 100;
+  }
+
+  &--weight-light {
+    font-weight: 300;
+  }
+
+  &--weight-regular {
+    font-weight: 400;
+  }
+
+  &--weight-medium {
+    font-weight: 500;
+  }
+
+  &--weight-bold {
+    font-weight: 700;
+  }
+
+  &--weight-black {
+    font-weight: 900;
+  }
+
+  &--transform-uppercase {
+    text-transform: uppercase;
+  }
+
+  &--transform-capitalize {
+    text-transform: capitalize;
+  }
+
+  &--decoration-underline {
+    text-decoration: underline;
+  }
+
+  &--display-block {
+    display: block;
+  }
+
+  &--color-black {
+    color: $color-black;
+  }
+
+  &--color-grey {
+    color: $color-manatee;
+  }
+
+  &--color-grey-light {
+    color: $color-alice-blue;
+  }
+
+  &--color-red {
+    color: $color-red-salsa;
+  }
+
+  &--color-green {
+    color: $color-malachite;
+  }
+
+  &--color-blue {
+    color: $color-cyan-process;
+  }
+
+  &--color-white {
+    color: $color-white;
+  }
+
+  &--color-imperial-red {
+    color: $color-imperial-red;
+  }
+
+  &--color-space-cadet {
+    color: $color-space-cadet;
+  }
+
+  &--color-amaranth-red {
+    color: $color-amaranth-red;
+  }
+
+  &--color-dark-grey {
+    color: $color-dark-grey;
+  }
+
+  &--color-regular-grey {
+    color: $color-regular-grey;
+  }
+
+  &--color-light-grey {
+    color: $color-light-grey;
+  }
+
+  &--color-cyan-process {
+    color: $color-cyan-process;
+  }
+
+  &--display-block {
+    display: block;
+  }
+}
