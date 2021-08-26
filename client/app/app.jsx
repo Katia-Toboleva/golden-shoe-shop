@@ -3,7 +3,7 @@ import { I18nextProvider } from 'react-i18next';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
-import { Page } from '@components';
+import Page from '@routes/page';
 
 import { store } from './state';
 
