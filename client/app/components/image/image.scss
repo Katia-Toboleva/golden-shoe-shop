@@ -1,0 +1,11 @@
+.image {
+  display: block;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+  }
+}
