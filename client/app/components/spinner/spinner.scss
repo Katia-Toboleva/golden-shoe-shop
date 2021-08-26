@@ -1,0 +1,43 @@
+@import 'colors.scss';
+
+.spinner {
+  display: block;
+  width: 100px;
+  height: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 4px;
+    left: 50%;
+    background-color: $color-amaranth-red;
+    transform: translateX(-50%);
+    animation: spinner 2000ms infinite;
+  }
+
+  @keyframes spinner {
+    0% {
+      width: 0%;
+      opacity: 1;
+    }
+
+    45% {
+      opacity: 1;
+    }
+
+    70% {
+      width: 100%;
+      opacity: 0;
+    }
+
+    100% {
+      width: 100%;
+      opacity: 0;
+    }
+  }
+}
