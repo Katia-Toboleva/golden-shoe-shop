@@ -3,9 +3,10 @@ const assert = require('assert');
 
 // Database Name
 const dbName = 'golden-shoe-shop';
+const test = 'i2c3rY_GJTW4x';
 
 // Connection URL
-const url = `mongodb+srv://test:test@cluster0.zcoyz.gcp.mongodb.net/${dbName}?retryWrites=true&w=majority`;
+const url = `mongodb+srv://katia:${test}@cluster0.jrfap.mongodb.net/${dbName}?retryWrites=true&w=majority`;
 
 // Create a new MongoClient
 const open = (url) => {

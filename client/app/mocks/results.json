@@ -1,0 +1,567 @@
+[
+  {
+    "uuid": "7845dfgrty7e8e7y7",
+    "name": "Baille Brogue",
+    "type": "woman",
+    "availability": [
+      {
+        "color": "blue",
+        "size": 6,
+        "quantity": 3
+      },
+      {
+        "color": "red",
+        "size": 6.5,
+        "quantity": 30
+      },
+      {
+        "color": "blue",
+        "size": 7,
+        "quantity": 15
+      },
+      {
+        "color": "blue",
+        "size": 7.5,
+        "quantity": 5
+      },
+      {
+        "color": "blue",
+        "size": 8,
+        "quantity": 150
+      },
+      {
+        "color": "red",
+        "size": 6,
+        "quantity": 2
+      },
+      {
+        "color": "red",
+        "size": 6.5,
+        "quantity": 2000
+      },
+      {
+        "color": "red",
+        "size": 7,
+        "quantity": 0
+      },
+      {
+        "color": "red",
+        "size": 7.5,
+        "quantity": 39
+      },
+      {
+        "color": "red",
+        "size": 8,
+        "quantity": 235
+      },
+      {
+        "color": "brown",
+        "size": 6,
+        "quantity": 2
+      },
+      {
+        "color": "brown",
+        "size": 6.5,
+        "quantity": 354
+      },
+      {
+        "color": "brown",
+        "size": 7,
+        "quantity": 0
+      },
+      {
+        "color": "brown",
+        "size": 7.5,
+        "quantity": 3544
+      },
+      {
+        "color": "brown",
+        "size": 8,
+        "quantity": 0
+      },
+      {
+        "color": "burgundy",
+        "size": 6,
+        "quantity": 2
+      },
+      {
+        "color": "burgundy",
+        "size": 6.5,
+        "quantity": 20
+      },
+      {
+        "color": "burgundy",
+        "size": 7,
+        "quantity": 200
+      },
+      {
+        "color": "burgundy",
+        "size": 7.5,
+        "quantity": 8000
+      },
+      {
+        "color": "burgundy",
+        "size": 8,
+        "quantity": 2
+      },
+      {
+        "color": "black",
+        "size": 6,
+        "quantity": 2
+      },
+      {
+        "color": "black",
+        "size": 6.5,
+        "quantity": 2343
+      },
+      {
+        "color": "black",
+        "size": 7,
+        "quantity": 21
+      },
+      {
+        "color": "black",
+        "size": 7.5,
+        "quantity": 987
+      },
+      {
+        "color": "black",
+        "size": 8,
+        "quantity": 345
+      }
+    ],
+    "image": "https: //images.unsplash.com/photo-1531310197839-ccf54634509e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=401&q=80",
+    "colors": [
+      "blue",
+      "red",
+      "brown",
+      "burgundy",
+      "black"
+    ],
+    "sizes": [
+      6,
+      6.5,
+      7,
+      7.5,
+      8
+    ],
+    "price": 50
+  },
+  {
+    "uuid": "7845detr878y7e8e7y7",
+    "name": "Torna Court",
+    "type": "woman",
+    "availability": [
+      {
+        "color": "blue",
+        "size": 6,
+        "quantity": 38
+      },
+      {
+        "color": "red",
+        "size": 6.5,
+        "quantity": 3
+      },
+      {
+        "color": "blue",
+        "size": 7,
+        "quantity": 0
+      },
+      {
+        "color": "blue",
+        "size": 7.5,
+        "quantity": 5888
+      },
+      {
+        "color": "blue",
+        "size": 8,
+        "quantity": 1
+      },
+      {
+        "color": "burgundy",
+        "size": 6,
+        "quantity": 28
+      },
+      {
+        "color": "burgundy",
+        "size": 6.5,
+        "quantity": 20587
+      },
+      {
+        "color": "burgundy",
+        "size": 7,
+        "quantity": 2
+      },
+      {
+        "color": "burgundy",
+        "size": 7.5,
+        "quantity": 0
+      },
+      {
+        "color": "burgundy",
+        "size": 8,
+        "quantity": 2
+      },
+      {
+        "color": "black",
+        "size": 6,
+        "quantity": 222
+      },
+      {
+        "color": "black",
+        "size": 6.5,
+        "quantity": 343
+      },
+      {
+        "color": "black",
+        "size": 7,
+        "quantity": 0
+      },
+      {
+        "color": "black",
+        "size": 7.5,
+        "quantity": 0
+      },
+      {
+        "color": "black",
+        "size": 8,
+        "quantity": 5
+      }
+    ],
+    "image": "https: //images.unsplash.com/photo-1494955464529-790512c65305?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1502&q=80",
+    "colors": [
+      "blue",
+      "burgundy",
+      "black"
+    ],
+    "sizes": [
+      6,
+      6.5,
+      7,
+      7.5,
+      8
+    ],
+    "price": 55
+  },
+  {
+    "uuid": "7845detr878y78878ffgfe7y7",
+    "name": "Orinoco Limit",
+    "type": "woman",
+    "availability": [
+      {
+        "color": "blue",
+        "size": 6,
+        "quantity": 38
+      },
+      {
+        "color": "blue",
+        "size": 6.5,
+        "quantity": 0
+      },
+      {
+        "color": "blue",
+        "size": 7,
+        "quantity": 80
+      },
+      {
+        "color": "blue",
+        "size": 7.5,
+        "quantity": 58
+      },
+      {
+        "color": "blue",
+        "size": 8,
+        "quantity": 0
+      },
+      {
+        "color": "yellow",
+        "size": 6,
+        "quantity": 2
+      },
+      {
+        "color": "yellow",
+        "size": 6.5,
+        "quantity": 7
+      },
+      {
+        "color": "yellow",
+        "size": 7,
+        "quantity": 287
+      },
+      {
+        "color": "yellow",
+        "size": 7.5,
+        "quantity": 0
+      },
+      {
+        "color": "yellow",
+        "size": 8,
+        "quantity": 0
+      },
+      {
+        "color": "orange",
+        "size": 6,
+        "quantity": 0
+      },
+      {
+        "color": "orange",
+        "size": 6.5,
+        "quantity": 3
+      },
+      {
+        "color": "orange",
+        "size": 7,
+        "quantity": 340
+      },
+      {
+        "color": "orange",
+        "size": 7.5,
+        "quantity": 50
+      },
+      {
+        "color": "orange",
+        "size": 8,
+        "quantity": 55
+      }
+    ],
+    "image": "https: //images.unsplash.com/photo-1519707248995-fc3d4b7c52d5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=746&q=80",
+    "colors": [
+      "blue",
+      "yellow",
+      "orange"
+    ],
+    "sizes": [
+      6,
+      6.5,
+      7,
+      7.5
+    ],
+    "price": 30
+  },
+  {
+    "uuid": "78uuetr878y78878ffgfe7y7",
+    "name": "Linae Way",
+    "type": "woman",
+    "availability": [
+      {
+        "color": "blue",
+        "size": 6,
+        "quantity": 85
+      },
+      {
+        "color": "blue",
+        "size": 6.5,
+        "quantity": 23
+      },
+      {
+        "color": "blue",
+        "size": 7,
+        "quantity": 45
+      },
+      {
+        "color": "blue",
+        "size": 7.5,
+        "quantity": 3
+      },
+      {
+        "color": "blue",
+        "size": 8,
+        "quantity": 50
+      }
+    ],
+    "image": "https: //images.unsplash.com/photo-1543163521-1bf539c55dd2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    "colors": [
+      "blue"
+    ],
+    "sizes": [
+      6,
+      6.5,
+      7,
+      7.5
+    ],
+    "price": 37
+  },
+  {
+    "uuid": "78uuetr878y7uyrf78ffgfe7y7",
+    "name": "Wallabe",
+    "type": "woman",
+    "availability": [
+      {
+        "color": "blue",
+        "size": 6,
+        "quantity": 85
+      },
+      {
+        "color": "blue",
+        "size": 6.5,
+        "quantity": 23
+      },
+      {
+        "color": "blue",
+        "size": 7,
+        "quantity": 45
+      },
+      {
+        "color": "blue",
+        "size": 7.5,
+        "quantity": 3
+      },
+      {
+        "color": "blue",
+        "size": 8,
+        "quantity": 50
+      },
+      {
+        "color": "black",
+        "size": 6,
+        "quantity": 8
+      },
+      {
+        "color": "black",
+        "size": 6.5,
+        "quantity": 3
+      },
+      {
+        "color": "black",
+        "size": 7,
+        "quantity": 5
+      },
+      {
+        "color": "black",
+        "size": 7.5,
+        "quantity": 30
+      },
+      {
+        "color": "black",
+        "size": 8,
+        "quantity": 0
+      }
+    ],
+    "image": "https: //images.unsplash.com/photo-1499013819532-e4ff41b00669?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80",
+    "colors": [
+      "blue", "black"
+    ],
+    "sizes": [
+      6,
+      6.5,
+      7,
+      7.5
+    ],
+    "price": 42
+  },
+  {
+    "uuid": "78uuerf78ffgfe7y7",
+    "name": "Vista",
+    "type": "woman",
+    "availability": [
+      {
+        "color": "blue",
+        "size": 6,
+        "quantity": 0
+      },
+      {
+        "color": "blue",
+        "size": 6.5,
+        "quantity": 2
+      },
+      {
+        "color": "blue",
+        "size": 7,
+        "quantity": 5
+      },
+      {
+        "color": "blue",
+        "size": 7.5,
+        "quantity": 0
+      },
+      {
+        "color": "blue",
+        "size": 8,
+        "quantity": 0
+      },
+      {
+        "color": "white",
+        "size": 6,
+        "quantity": 854
+      },
+      {
+        "color": "white",
+        "size": 6.5,
+        "quantity": 3
+      },
+      {
+        "color": "white",
+        "size": 7,
+        "quantity": 5
+      },
+      {
+        "color": "white",
+        "size": 7.5,
+        "quantity": 0
+      },
+      {
+        "color": "white",
+        "size": 8,
+        "quantity": 80
+      }
+    ],
+    "image": "https: //images.unsplash.com/photo-1515347619252-60a4bf4fff4f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=763&q=80",
+    "colors": [
+      "blue",
+      "white"
+    ],
+    "sizes": [
+      6,
+      6.5,
+      7,
+      7.5
+    ],
+    "price": 42
+  },
+  {
+    "uuid": "78uue874210gfe7y7",
+    "name": "Courtline",
+    "type": "man",
+    "availability": [
+      {
+        "color": "brown",
+        "size": 6,
+        "quantity": 0
+      }
+    ],
+    "image": "https: //images.unsplash.com/photo-1512675828443-4f454c42253a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80",
+    "colors": [
+      "brown"
+    ],
+    "sizes": [
+      6,
+      6.5,
+      7,
+      7.5
+    ],
+    "price": 50
+  },
+  {
+    "uuid": "78uuetrtr0gfe7y7",
+    "name": "Sparkle",
+    "type": "kid",
+    "availability": [
+      {
+        "color": "black",
+        "size": 6,
+        "quantity": 0
+      }
+    ],
+    "image": "https: //images.unsplash.com/photo-1619418446516-85fcd7ef6be2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80",
+    "colors": [
+      "black"
+    ],
+    "sizes": [
+      6,
+      6.5,
+      7,
+      7.5
+    ],
+    "price": 50
+  }
+]
