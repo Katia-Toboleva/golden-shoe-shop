@@ -1,7 +1,7 @@
 const path = require('path');
 
-const webpackTemplate = require('./client/webpack/template');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpackTemplate = require('./client/webpack/template');
 
 module.exports = ({ NODE_ENV }) => ({
   mode: NODE_ENV,
@@ -83,7 +83,7 @@ module.exports = ({ NODE_ENV }) => ({
           if (proxyReq.getHeader('origin')) {
             proxyReq.setHeader('origin', 'http://localhost:3000');
           }
-        }
+        },
       },
     },
   },
@@ -91,5 +91,5 @@ module.exports = ({ NODE_ENV }) => ({
     new HtmlWebpackPlugin({
       templateContent: webpackTemplate,
     }),
-  ]
+  ],
 });
