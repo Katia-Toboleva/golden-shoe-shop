@@ -5,7 +5,6 @@ import { DefaultPageWrapper } from '@components';
 
 const Home = () => (
   <DefaultPageWrapper>
-    hiiiiii
     {/* <HomeContainer /> */}
   </DefaultPageWrapper>
 );
