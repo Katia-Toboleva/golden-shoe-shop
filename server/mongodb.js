@@ -1,4 +1,4 @@
-const MongoClient = require('mongodb').MongoClient;
+const { MongoClient } = require('mongodb');
 const assert = require('assert');
 
 // Database Name
@@ -9,9 +9,7 @@ const test = 'i2c3rY_GJTW4x';
 const url = `mongodb+srv://katia:${test}@cluster0.jrfap.mongodb.net/${dbName}?retryWrites=true&w=majority`;
 
 // Create a new MongoClient
-const open = (url) => {
-  return new MongoClient(url);
-};
+const open = (url) => new MongoClient(url);
 
 const query = (fn) => {
   const client = open(url);
@@ -24,8 +22,8 @@ const query = (fn) => {
   });
 
   client.close();
-}
+};
 
 module.exports = {
   query,
-}
+};

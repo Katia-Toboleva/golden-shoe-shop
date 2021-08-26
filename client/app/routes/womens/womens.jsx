@@ -1,12 +1,11 @@
 import React from 'react';
 
 import { DefaultPageWrapper } from '@components';
-// import { HomeContainer } from '@containers';
+// import { WomensContainer } from '@containers';
 
 const Home = () => (
   <DefaultPageWrapper>
-    hiiiiii
-    {/* <HomeContainer /> */}
+    {/* <WomensContainer /> */}
   </DefaultPageWrapper>
 );
 
