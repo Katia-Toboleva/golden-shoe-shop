@@ -1,0 +1,168 @@
+@import 'colors.scss';
+
+.icon {
+  i {
+    position: relative;
+    display: block;
+
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &--theme-grey {
+    svg {
+      fill: $color-manatee;
+    }
+  }
+
+  &--theme-white {
+    svg {
+      fill: $color-white;
+    }
+  }
+
+  &--theme-black {
+    svg {
+      fill: $color-black;
+    }
+  }
+
+  &--theme-green {
+    svg {
+      fill: $color-malachite;
+    }
+  }
+
+  &--theme-red {
+    svg {
+      fill: $color-red-salsa;
+    }
+  }
+
+  &--theme-blue {
+    svg {
+      fill: $color-cyan-process;
+    }
+  }
+
+  &--theme-orange {
+    svg {
+      fill: $color-orange-peel;
+    }
+  }
+
+  &--theme-white {
+    svg {
+      fill: rgb(255, 255, 255);
+    }
+  }
+
+  &--theme-brown {
+    svg {
+      fill: $color-raw-sienna;
+    }
+  }
+
+  &--theme-color-light-grey {
+    svg {
+      fill: $color-light-grey;
+    }
+  }
+
+  &--theme-color-regular-grey {
+    svg {
+      fill: $color-regular-grey;
+    }
+  }
+
+  &--theme-color-amaranth-red {
+    svg {
+      fill: $color-amaranth-red;
+    }
+  }
+
+  &--size-xsmall {
+    i {
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  &--size-small {
+    i {
+      width: 8px;
+      height: 8px;
+    }
+
+    svg {
+      width: 8px;
+      height: 8px;
+    }
+  }
+
+  &--size-medium {
+    i {
+      width: 16px;
+      height: 16px;
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &--size-large {
+    i {
+      width: 24px;
+      height: 24px;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &--size-x-large {
+    i {
+      width: 32px;
+      height: 32px;
+    }
+
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &--size-xx-large {
+    i {
+      width: 52px;
+      height: 52px;
+    }
+
+    svg {
+      width: 52px;
+    }
+  }
+
+  &--round {
+    border-radius: 50%;
+    background-color: #ddd;
+  }
+
+  &--round#{&}--size-small {
+    padding: 10px;
+  }
+}
