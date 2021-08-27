@@ -10,7 +10,7 @@ const Category = ({
 }) => (
   <>
     <div className={styles['category']}>
-      ABC
+      
     </div>
   </>
 );

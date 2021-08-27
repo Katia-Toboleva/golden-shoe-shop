@@ -9,7 +9,7 @@ const Categories = ({
   onClick,
 }) => (
   <>
-    <div className={styles['category']}>
+    <div className={styles['categories']}>
       ABC
     </div>
   </>

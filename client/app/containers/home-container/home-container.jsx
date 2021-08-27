@@ -1,9 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { DefaultPageWrapper, Categories } from '@components';
 
-import { DefaultPageWrapper } from '@components';
+import * as actions from './state/actions';
 
-const HomeContainer = () => {
+const HomeContainer = (props) => {
   const [stage, setStage] = useState(undefined);
+
+  useEffect(() => {
+    props.actions.fetchCategories();
+  }, []);
 
   const handleCartClick = () => {
     setStage('cart');
@@ -21,6 +28,8 @@ const HomeContainer = () => {
     setStage('signIn');
   };
 
+  console.log(props, 'PROPSSS');
+
   return (
     <DefaultPageWrapper
       onCartClick={handleCartClick}
@@ -28,9 +37,17 @@ const HomeContainer = () => {
       onSearchClick={handleSearchClick}
       onSignInClick={handleSignInClick}
     >
-      <div>I'm home </div>
+      <Categories />
     </DefaultPageWrapper>
   );
 };
 
-export default HomeContainer;
+const mapStateToProps = ({ categories }) => ({
+  state: categories,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  actions: bindActionCreators(actions, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer);
