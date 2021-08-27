@@ -7,6 +7,7 @@ import * as actions from './state/actions';
 
 const HomeContainer = (props) => {
   const [stage, setStage] = useState(undefined);
+  const [pageActive, setPageActive] = useState(undefined);
 
   useEffect(() => {
     props.actions.fetchCategories();
@@ -28,6 +29,11 @@ const HomeContainer = (props) => {
     setStage('signIn');
   };
 
+  const handleNavClick = (value) => {
+    console.log('value received', value)
+    setPageActive(value);
+  };
+
   console.log(props, 'PROPSSS');
 
   return (
@@ -36,6 +42,8 @@ const HomeContainer = (props) => {
       onHomeClick={handleHomeClick}
       onSearchClick={handleSearchClick}
       onSignInClick={handleSignInClick}
+      onNavClick={handleNavClick}
+      pageActive={pageActive}
     >
       <Categories />
     </DefaultPageWrapper>
