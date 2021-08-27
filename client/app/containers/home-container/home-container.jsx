@@ -31,11 +31,8 @@ const HomeContainer = ({ actions, state }) => {
   };
 
   const handleNavClick = (value) => {
-    console.log('value received', value);
     setPageActive(value);
   };
-
-  console.log(props, 'PROPSSS');
 
   return (
     <DefaultPageWrapper
