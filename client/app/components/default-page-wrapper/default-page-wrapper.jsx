@@ -6,10 +6,10 @@ import {
 
 const DefaultPageWrapper = ({ children }) => (
 //   <Container>
-  // <Header /> 
+  // <Header />
   // <Nav />
   // <Main>
-  //   {children}
+    <div>{children}</div>
   // </Main>
   // <Footer />
 
