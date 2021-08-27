@@ -24,9 +24,9 @@ const DefaultPageWrapper = ({
       onSignInClick={onSignInClick}
     />
     <Nav onNavClick={onNavClick} />
-    {/* <Main>
+    <div>
       <div>{children}</div>
-    </Main> */}
+    </div>
     {/* <Footer /> */}
   </Container>
 );
