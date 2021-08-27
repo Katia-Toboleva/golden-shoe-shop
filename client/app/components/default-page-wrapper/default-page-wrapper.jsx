@@ -7,9 +7,20 @@ import {
   Header,
 } from '@components';
 
-const DefaultPageWrapper = ({ children }) => (
+const DefaultPageWrapper = ({
+  children,
+  handleSignInClick,
+  handleSearchClick,
+  handleHomeClick,
+  handleCartClick,
+}) => (
   <Container>
-    <Header />
+    <Header
+      handleCartClick={handleCartClick}
+      handleHomeClick={handleHomeClick}
+      handleSearchClick={handleSearchClick}
+      handleSignInClick={handleSignInClick}
+    />
     {/* <Nav /> */}
     {/* <Main>
       <div>{children}</div>
