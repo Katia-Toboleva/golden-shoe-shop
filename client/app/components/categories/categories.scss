@@ -1,3 +1,8 @@
 .categories {
-
-}
+  display: grid;
+  grid-template-columns: 1fr;
+  
+  > * {
+    height: 40vh;
+  }
+};

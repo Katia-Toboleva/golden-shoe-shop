@@ -11,11 +11,13 @@ const Row = ({
   alignItems,
   justifyContent,
   space,
+  wrap,
 }) => (
   <div
     className={cx('grid', {
       [`grid--${direction}`]: direction,
       'grid--center': center,
+      'grid--wrap': wrap,
       [`grid--align-items-${alignItems}`]: alignItems,
       [`grid--justify-content-${justifyContent}`]: justifyContent,
       [`grid--space-horizontal-${space}`]: space && (direction === 'row' || direction === 'row-reverse'),
