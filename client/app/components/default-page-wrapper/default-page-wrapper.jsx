@@ -5,6 +5,7 @@ import {
   Column,
   Container,
   Header,
+  Nav,
 } from '@components';
 
 const DefaultPageWrapper = ({
@@ -13,6 +14,7 @@ const DefaultPageWrapper = ({
   onSearchClick,
   onHomeClick,
   onCartClick,
+  onNavClick,
 }) => (
   <Container>
     <Header
@@ -21,7 +23,7 @@ const DefaultPageWrapper = ({
       onSearchClick={onSearchClick}
       onSignInClick={onSignInClick}
     />
-    {/* <Nav /> */}
+    <Nav onNavClick={onNavClick} />
     {/* <Main>
       <div>{children}</div>
     </Main> */}
