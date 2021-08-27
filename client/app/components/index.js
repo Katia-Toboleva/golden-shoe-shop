@@ -13,3 +13,4 @@ export { default as Header } from './header';
 export { default as Categories } from './categories';
 export { default as Category } from './category';
 export { default as Nav } from './nav';
+export { default as Footer } from './footer';

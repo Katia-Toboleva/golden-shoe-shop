@@ -10,6 +10,7 @@ const Button = ({
   theme,
   children,
   hoverable = false,
+  hoverOpacity = false,
   round = true,
   active,
   padded,
@@ -23,6 +24,7 @@ const Button = ({
         round,
         active,
         padded,
+        hoverOpacity,
       })}
       onClick={onClick}
     >

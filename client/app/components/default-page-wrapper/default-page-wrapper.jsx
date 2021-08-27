@@ -6,6 +6,7 @@ import {
   Container,
   Header,
   Nav,
+  Footer,
 } from '@components';
 
 const DefaultPageWrapper = ({
@@ -28,7 +29,7 @@ const DefaultPageWrapper = ({
     <div>
       <div>{children}</div>
     </div>
-    {/* <Footer /> */}
+    <Footer />
   </Container>
 );
 
