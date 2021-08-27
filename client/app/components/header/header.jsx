@@ -7,27 +7,34 @@ import { Row, Column } from '../grid';
 
 import styles from './styles.scss';
 
-const Header = () => {
+const Header = ({
+  handleCartClick,
+  handleSearchClick,
+  handleHomeClick,
+  handleSignInClick,
+}) => {
   return (
     <div className={styles.header}>
       <Row direction="row" alignItems="center" justifyContent="space-between">
         <Column>
-          <Button>
+          <Button onClick={handleSignInClick}>
             <Text text="Sign in" />
           </Button>
         </Column>
         <Column>
-          <Logo size="small"/>
+          <Button onClick={handleHomeClick}>
+            <Logo size="small"/>
+          </Button>
         </Column>
         <div className={styles.actions}>
           <Row direction="row" alignItems="center" justifyContent="space-between">
             <Column>
-              <Button>
+              <Button onClick={handleSearchClick}>
                 <Icon icon="search" theme="grey" size="medium"/>
               </Button>
             </Column>
             <Column>
-              <Button>
+              <Button onClick={handleCartClick}>
                 <Icon icon="cart" theme="grey" size="medium"/>
               </Button>
             </Column>
