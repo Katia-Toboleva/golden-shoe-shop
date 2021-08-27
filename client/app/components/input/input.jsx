@@ -8,7 +8,7 @@ import styles from './input.scss';
 const cx = classnames.bind(styles);
 
 const Input = ({ value, placeholder, onChange, name }) => {
-  const [state, setState] = useState({ focused: false, value });
+  const [state, setState] = useState({ focused: true, value });
   const { t } = useTranslation();
 
   const handleChange = (event) => {
@@ -32,7 +32,7 @@ const Input = ({ value, placeholder, onChange, name }) => {
   const handleInputBlur = () => {
     setState({
       ...state,
-      focused: false,
+      // focused: false,
     });
   };
 

@@ -14,3 +14,6 @@ export { default as Categories } from './categories';
 export { default as Category } from './category';
 export { default as Nav } from './nav';
 export { default as Footer } from './footer';
+export { default as Email } from './footer/contact/email';
+export { default as Contact } from './footer/contact';
+export { default as Social } from './footer/contact/social';

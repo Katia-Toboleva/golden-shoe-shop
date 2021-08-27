@@ -2,6 +2,7 @@ import React from 'react';
 import Text from '../text';
 import { Row, Column } from '../grid';
 import Button from '../button';
+import Contact from './contact';
 
 import styles from './styles.scss';
 
@@ -61,6 +62,7 @@ const Footer = ({onFooterClick}) => {
           </Column>
         ))}
       </Row>
+      <Contact />
     </div>
   );
 };
