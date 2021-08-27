@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { DefaultPageWrapper, Categories } from '@components';
+import { DefaultPageWrapper, Categories, Spinner } from '@components';
 
-import * as actions from './state/actions';
+import * as categoriesActions from './state/actions';
 
-const HomeContainer = (props) => {
+const HomeContainer = ({ actions, state }) => {
+  const { categories, fetchCategoriesRequestStatus } = state;
   const [stage, setStage] = useState(undefined);
   const [pageActive, setPageActive] = useState(undefined);
 
   useEffect(() => {
-    props.actions.fetchCategories();
+    actions.fetchCategories();
   }, []);
 
   const handleCartClick = () => {
@@ -30,7 +31,7 @@ const HomeContainer = (props) => {
   };
 
   const handleNavClick = (value) => {
-    console.log('value received', value)
+    console.log('value received', value);
     setPageActive(value);
   };
 
@@ -45,8 +46,15 @@ const HomeContainer = (props) => {
       onNavClick={handleNavClick}
       pageActive={pageActive}
     >
-      <Categories />
+      {fetchCategoriesRequestStatus === 'rejected' && <div>Error!</div>}
+      {fetchCategoriesRequestStatus === 'pending' && <Spinner />}
+      {fetchCategoriesRequestStatus === 'success' && (
+        <Categories
+          categories={categories}
+        />
+      )}
     </DefaultPageWrapper>
+
   );
 };
 
@@ -55,7 +63,7 @@ const mapStateToProps = ({ categories }) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  actions: bindActionCreators(actions, dispatch),
+  actions: bindActionCreators(categoriesActions, dispatch),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer);

@@ -5,7 +5,7 @@ import styles from './categories.scss';
 const cx = classnames.bind(styles);
 
 const Categories = ({
-  category,
+  categories,
   onClick,
 }) => (
   <>

@@ -27,7 +27,7 @@ const DefaultPageWrapper = ({
     <Nav onNavClick={onNavClick} pageActive={pageActive}/>
     {/* <Main>
       <div>{children}</div>
-    </Main> */}
+    </div>
     {/* <Footer /> */}
   </Container>
 );

@@ -1,4 +1,4 @@
-export const fetchArticle = (id) => {
+export const fetchItem = (id) => {
   const options = {
     method: 'GET',
   };
