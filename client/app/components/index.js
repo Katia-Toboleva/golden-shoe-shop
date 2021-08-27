@@ -10,3 +10,5 @@ export { default as Input } from './input';
 export { default as Container } from './container';
 export { default as DefaultPageWrapper } from './default-page-wrapper';
 export { default as Header } from './header';
+export { default as Categories } from './categories';
+export { default as Category } from './category';
