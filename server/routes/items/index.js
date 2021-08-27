@@ -15,7 +15,7 @@ const getById = (req, res) => async ({ db }) => {
 
 const get = (req, res) => async ({ db }) => {
   const {
-    type, size, color, name,
+    type, size, color, name, minprice, maxprice, price,
   } = req.query;
 
   const queryParams = {};
@@ -38,6 +38,29 @@ const get = (req, res) => async ({ db }) => {
 
   if (color) {
     queryParams.colors = color;
+  }
+
+  if (minprice) {
+    queryParams.price = {
+      $gte: Number(minprice),
+    };
+  }
+
+  if (maxprice) {
+    queryParams.price = {
+      $lte: Number(maxprice),
+    };
+  }
+
+  if (minprice && maxprice) {
+    queryParams.price = {
+      $gte: Number(minprice),
+      $lte: Number(maxprice),
+    };
+  }
+
+  if (price) {
+    queryParams.price = Number(price);
   }
 
   const data = await db.collection('items').find(queryParams, options).toArray();
