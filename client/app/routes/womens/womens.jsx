@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { DefaultPageWrapper } from '@components';
-// import { WomensContainer } from '@containers';
+import { Container } from '@components';
+import { WomensContainer } from '@containers';
 
-const Home = () => (
-  <DefaultPageWrapper>
-    {/* <WomensContainer /> */}
-  </DefaultPageWrapper>
+const Womens = () => (
+  <Container>
+    <WomensContainer />
+  </Container>
 );
 
-export default Home;
+export default Womens;

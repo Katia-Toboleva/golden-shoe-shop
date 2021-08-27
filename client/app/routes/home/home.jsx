@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { DefaultPageWrapper } from '@components';
+import { Container } from '@components';
 import { HomeContainer } from '@containers';
 
 const Home = () => (
-  <DefaultPageWrapper>
+  <Container>
     <HomeContainer />
-  </DefaultPageWrapper>
+  </Container>
 );
 
 export default Home;

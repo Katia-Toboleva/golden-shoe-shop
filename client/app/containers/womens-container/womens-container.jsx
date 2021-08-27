@@ -2,10 +2,10 @@ import React from 'react';
 
 import { DefaultPageWrapper } from '@components';
 
-const HomeContainer = () => (
+const WomensContainer = () => (
   <DefaultPageWrapper>
-    <div>I'm home </div>
+    <div>I'm womens </div>
   </DefaultPageWrapper>
 );
 
-export default HomeContainer;
+export default WomensContainer;
