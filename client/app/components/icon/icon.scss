@@ -1,6 +1,8 @@
 @import 'colors.scss';
 
 .icon {
+  position: relative;
+
   i {
     position: relative;
     display: block;
@@ -164,5 +166,19 @@
 
   &--round#{&}--size-small {
     padding: 10px;
+  }
+
+  .count {
+    border-radius: 50%;
+    background-color: white;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 5px;
+    right: -5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid grey;
   }
 }

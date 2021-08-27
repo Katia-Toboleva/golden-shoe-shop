@@ -10,6 +10,10 @@ const HomeContainer = ({ actions, state }) => {
   const [stage, setStage] = useState(undefined);
   const [pageActive, setPageActive] = useState(undefined);
 
+  //REMOVE THIS LINE WHEN IMPLEMENTING FETCH
+  const itemsInCart = [];
+  //===========================================
+
   useEffect(() => {
     actions.fetchCategories();
   }, []);
@@ -42,6 +46,7 @@ const HomeContainer = ({ actions, state }) => {
       onSignInClick={handleSignInClick}
       onNavClick={handleNavClick}
       pageActive={pageActive}
+      itemsInCart={itemsInCart}
     >
       {fetchCategoriesRequestStatus === 'rejected' && <div>Error!</div>}
       {fetchCategoriesRequestStatus === 'pending' && <Spinner />}

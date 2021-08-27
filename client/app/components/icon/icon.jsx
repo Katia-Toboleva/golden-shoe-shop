@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Text from '../text';
 import classnames from 'classnames/bind';
 
 import * as glyphs from './svg';
@@ -13,6 +14,7 @@ const Icon = ({
   icon,
   round,
   theme,
+  items,
 }) => (
   <div
     className={cx('icon', {
@@ -22,6 +24,11 @@ const Icon = ({
     })}
   >
     <i dangerouslySetInnerHTML={{ __html: glyphs[icon] }} />
+    {(icon === 'cart' && !!items.length) && (
+      <div className={styles.count}>
+        <Text text={items.length} size="xsmall" />
+      </div>
+    )}
   </div>
 );
 

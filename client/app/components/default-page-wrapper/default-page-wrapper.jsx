@@ -17,6 +17,7 @@ const DefaultPageWrapper = ({
   onCartClick,
   onNavClick,
   pageActive,
+  itemsInCart,
 }) => (
   <Container>
     <Header
@@ -24,6 +25,7 @@ const DefaultPageWrapper = ({
       onHomeClick={onHomeClick}
       onSearchClick={onSearchClick}
       onSignInClick={onSignInClick}
+      itemsInCart={itemsInCart}
     />
     <Nav onNavClick={onNavClick} pageActive={pageActive}/>
     <div>

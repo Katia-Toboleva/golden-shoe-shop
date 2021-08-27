@@ -12,6 +12,7 @@ const Header = ({
   onSearchClick,
   onHomeClick,
   onSignInClick,
+  itemsInCart,
 }) => {
   return (
     <div className={styles.header}>
@@ -35,7 +36,7 @@ const Header = ({
             </Column>
             <Column>
               <Button onClick={onCartClick}>
-                <Icon icon="cart" theme="grey" size="medium"/>
+                <Icon icon="cart" theme="grey" size="medium" items={itemsInCart}/>
               </Button>
             </Column>
           </Row>
