@@ -11,7 +11,7 @@ const HomeContainer = ({ actions, state }) => {
   const [pageActive, setPageActive] = useState(undefined);
 
   //REMOVE THIS LINE WHEN IMPLEMENTING FETCH
-  const itemsInCart = [];
+  const itemsInCart = [1,1,1,1,1,1,1,];
   //===========================================
 
   useEffect(() => {

@@ -174,11 +174,12 @@
     width: 10px;
     height: 10px;
     position: absolute;
-    top: 5px;
-    right: -5px;
+    top: 10px;
+    right: -3px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid grey;
+    border: 1px solid black;
+    padding: 3px;
   }
 }
