@@ -9,17 +9,17 @@ import {
 
 const DefaultPageWrapper = ({
   children,
-  handleSignInClick,
-  handleSearchClick,
-  handleHomeClick,
-  handleCartClick,
+  onSignInClick,
+  onSearchClick,
+  onHomeClick,
+  onCartClick,
 }) => (
   <Container>
     <Header
-      handleCartClick={handleCartClick}
-      handleHomeClick={handleHomeClick}
-      handleSearchClick={handleSearchClick}
-      handleSignInClick={handleSignInClick}
+      onCartClick={onCartClick}
+      onHomeClick={onHomeClick}
+      onSearchClick={onSearchClick}
+      onSignInClick={onSignInClick}
     />
     {/* <Nav /> */}
     {/* <Main>

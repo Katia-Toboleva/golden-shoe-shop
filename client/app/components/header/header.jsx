@@ -8,33 +8,33 @@ import { Row, Column } from '../grid';
 import styles from './styles.scss';
 
 const Header = ({
-  handleCartClick,
-  handleSearchClick,
-  handleHomeClick,
-  handleSignInClick,
+  onCartClick,
+  onSearchClick,
+  onHomeClick,
+  onSignInClick,
 }) => {
   return (
     <div className={styles.header}>
       <Row direction="row" alignItems="center" justifyContent="space-between">
         <Column>
-          <Button onClick={handleSignInClick}>
-            <Text text="Sign in" />
+          <Button onClick={onSignInClick}>
+            <Text text="Sign in" transform="uppercase"/>
           </Button>
         </Column>
         <Column>
-          <Button onClick={handleHomeClick}>
+          <Button onClick={onHomeClick}>
             <Logo size="small"/>
           </Button>
         </Column>
         <div className={styles.actions}>
           <Row direction="row" alignItems="center" justifyContent="space-between">
             <Column>
-              <Button onClick={handleSearchClick}>
+              <Button onClick={onSearchClick}>
                 <Icon icon="search" theme="grey" size="medium"/>
               </Button>
             </Column>
             <Column>
-              <Button onClick={handleCartClick}>
+              <Button onClick={onCartClick}>
                 <Icon icon="cart" theme="grey" size="medium"/>
               </Button>
             </Column>

@@ -23,10 +23,10 @@ const HomeContainer = () => {
 
   return (
     <DefaultPageWrapper
-      handleCartClick={handleCartClick}
-      handleHomeClick={handleHomeClick}
-      handleSearchClick={handleSearchClick}
-      handleSignInClick={handleSignInClick}
+      onCartClick={handleCartClick}
+      onHomeClick={handleHomeClick}
+      onSearchClick={handleSearchClick}
+      onSignInClick={handleSignInClick}
     >
       <div>I'm home </div>
     </DefaultPageWrapper>
