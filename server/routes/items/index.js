@@ -15,7 +15,7 @@ const getById = (req, res) => async ({ db }) => {
 
 const get = (req, res) => async ({ db }) => {
   const {
-    type, size, colour, name,
+    type, size, color, name,
   } = req.query;
 
   const queryParams = {};
@@ -26,15 +26,18 @@ const get = (req, res) => async ({ db }) => {
   }
 
   if (name) {
-    queryParams.name = name;
+    queryParams.name = {
+      $regex: name,
+      $options: 'i',
+    };
   }
 
   if (size) {
-    queryParams.size = size;
+    queryParams.sizes = Number(size);
   }
 
-  if (colour) {
-    queryParams.colour = colour;
+  if (color) {
+    queryParams.colors = color;
   }
 
   const data = await db.collection('items').find(queryParams, options).toArray();
