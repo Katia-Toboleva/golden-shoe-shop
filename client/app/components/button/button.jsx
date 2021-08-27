@@ -8,14 +8,19 @@ const Button = ({
   onClick,
   size,
   theme,
+  children,
 }) => (
-  <div
-    className={cx('button', {
-      [`button--size-${size}`]: size,
-      [`button--theme-${theme}`]: theme,
-    })}
-    onClick={onClick}
-  />
+  <>
+    <div
+      className={cx('button', {
+        [`button--size-${size}`]: size,
+        [`button--theme-${theme}`]: theme,
+      })}
+      onClick={onClick}
+    >
+      {children}
+    </div>
+  </>
 );
 
 export default Button;

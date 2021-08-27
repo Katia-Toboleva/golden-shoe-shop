@@ -8,21 +8,15 @@ import styles from './text.scss';
 const cx = classnames.bind(styles);
 
 const Text = ({
-  translation,
+  text,
   color,
   size,
   weight,
-  children,
   transform,
   decoration,
   display,
 }) => {
   const { t } = useTranslation();
-  const text = translation && t(translation);
-
-  const extraProps = (text)
-    ? { dangerouslySetInnerHTML: { __html: text } }
-    : { children };
 
   return (
     <span
@@ -34,8 +28,9 @@ const Text = ({
         [`text--decoration-${decoration}`]: decoration,
         [`text--display-${display}`]: display,
       })}
-      {...extraProps}
-    />
+    >
+      {t(text)}
+    </span>
   );
 };
 
