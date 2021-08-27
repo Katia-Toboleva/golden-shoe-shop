@@ -20,4 +20,4 @@ Object.entries(routes).forEach(([routeName, routes]) => {
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
-})
+});
