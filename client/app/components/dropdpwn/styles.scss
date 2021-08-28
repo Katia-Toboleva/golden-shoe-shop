@@ -1,8 +1,13 @@
-.dropdown {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5px;
-  border: 1px solid black;
-  cursor: pointer;
+.container {
+  position: relative;
+  width: 70px;
+
+  .dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+  }
 }

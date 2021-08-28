@@ -9,6 +9,10 @@ const WomensContainer = ({ actions, state }) => {
   const { categories, fetchCategoriesRequestStatus } = state;
   const [stage, setStage] = useState(undefined);
   const [pageActive, setPageActive] = useState(undefined);
+  const [womanFilterSelected, setWomanFilterSelected] = useState(undefined);
+  const [sizeFilterSelected, setSizeFilterSelected] = useState(undefined);
+  const [colorFilterSelected, setColorFilterSelected] = useState(undefined);
+  const [priceFilterSelected, setPriceFilterSelected] = useState(undefined);
 
   //REMOVE THIS LINE WHEN IMPLEMENTING FETCH
   const itemsInCart = [1,1,1,1,1,1,1,];
@@ -38,6 +42,21 @@ const WomensContainer = ({ actions, state }) => {
     setPageActive(value);
   };
 
+  const handleItemClick = (value, label) => {
+    if (label === 'women') {
+      setWomanFilterSelected(value);
+    }
+    if (label === 'size') {
+      setSizeFilterSelected(value);
+    }
+    if (label === 'colour') {
+      setColorFilterSelected(value);
+    }
+    if (label === 'price') {
+      setPriceFilterSelected(value);
+    }
+  };
+
   return (
     <DefaultPageWrapper
       onCartClick={handleCartClick}
@@ -48,7 +67,13 @@ const WomensContainer = ({ actions, state }) => {
       pageActive={pageActive}
       itemsInCart={itemsInCart}
     >
-      <Filters />
+      <Filters
+        onItemClick={handleItemClick}
+        womanFilterSelected={womanFilterSelected}
+        sizeFilterSelected={sizeFilterSelected}
+        colorFilterSelected={colorFilterSelected}
+        priceFilterSelected={priceFilterSelected}
+      />
       {fetchCategoriesRequestStatus === 'rejected' && <div>Error!</div>}
       {fetchCategoriesRequestStatus === 'pending' && <Spinner />}
       {fetchCategoriesRequestStatus === 'success' && (

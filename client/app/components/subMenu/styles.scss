@@ -1,7 +1,23 @@
 .subMenu {
   display: flex;
   flex-direction: column;
+  position: absolute;
+  background-color: white;
+  left: 0;
+  height: 120px;
+  display: block;
+  overflow-y: auto;
+  animation: drop .35s ease-in;
 
+  @keyframes drop {
+    from {
+      height: 0;
+    }
+
+    to {
+      height: 150px;
+    }
+  }
   .item {
     padding: 5px;
     cursor: pointer;
