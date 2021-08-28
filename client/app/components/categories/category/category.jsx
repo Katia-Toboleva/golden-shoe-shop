@@ -1,22 +1,22 @@
 import React from 'react';
 import classnames from 'classnames/bind';
-import styles from './category.scss';
+import styles from '../categories.scss';
 
 const cx = classnames.bind(styles);
 
 const getInlineStyles = (url) => ({
-  backgroundImage: `url(${url})`,
+  background: `url(${url}) center/cover no-repeat`,
+  height: '400px',
 });
 
 const Category = ({
+  index,
   category,
   url,
   onClick,
 }) => (
   <>
-    <div className={styles['category']}>
-      <div className={styles['category__image']} style={getInlineStyles(url)} />
-    </div>
+    <div className={styles[`category category__${index}`]} style={getInlineStyles(url)} />
   </>
 );
 

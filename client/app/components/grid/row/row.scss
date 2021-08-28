@@ -18,6 +18,10 @@
     justify-content: center;
   }
 
+  &--wrap {
+    flex-wrap: wrap;
+  }
+
   &--align-items-center {
     align-items: center;
   }

@@ -1,3 +1,8 @@
 .categories {
-
-}
+  display: grid;
+  grid-template-columns: 1fr;
+  
+  &__item {
+    grid-column: 1/-1;
+  }
+};
