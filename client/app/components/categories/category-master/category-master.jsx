@@ -5,7 +5,8 @@ import styles from '../categories.scss';
 const cx = classnames.bind(styles);
 
 const getInlineStyles = (url) => ({
-  backgroundImage: `url(${url})`,
+  background: `url(${url}) center/cover no-repeat`,
+  height: '400px',
 });
 
 const CategoryMaster = ({
@@ -15,7 +16,7 @@ const CategoryMaster = ({
   onClick,
 }) => (
   <>
-    <div className={styles[`category__${index}`]} style={getInlineStyles(url)} />
+    <div className={styles[`category category__${index}`]} style={getInlineStyles(url)} />
   </>
 );
 

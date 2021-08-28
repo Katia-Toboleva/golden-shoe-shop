@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr;
   
-  > * {
-    height: 40vh;
+  &__item {
+    grid-column: 1/-1;
   }
 };
