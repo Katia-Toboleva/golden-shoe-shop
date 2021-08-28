@@ -3,9 +3,9 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { Spinner } from '@components';
-import * as actions from './state/view-item-container.actions';
+import * as actions from './state/actions';
 
-const ViewItemContainer = (props) => {
+const ItemContainer = (props) => {
   const { state } = props;
   const { item, fetchItemRequestStatus } = state;
   const { id } = useParams();
@@ -31,12 +31,12 @@ const ViewItemContainer = (props) => {
   );
 };
 
-const mapStateToProps = ({ viewItem }) => ({
-  state: viewItem,
+const mapStateToProps = ({ item }) => ({
+  state: item,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   actions: bindActionCreators(actions, dispatch),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ViewItemContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(ItemContainer);

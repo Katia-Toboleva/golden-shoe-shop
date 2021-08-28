@@ -1,4 +1,4 @@
-import CONSTANTS from './view-item-container.constants';
+import CONSTANTS from './constants';
 import { createReducer } from '../../../state/utilities';
 
 const initialState = {
@@ -27,9 +27,9 @@ const atoms = {
   [CONSTANTS.GET_ITEM_REJECTED]: getItemRejected,
 };
 
-const viewItemReducer = createReducer({
+const itemReducer = createReducer({
   initialState,
   atoms,
 });
 
-export default viewItemReducer;
+export default itemReducer;

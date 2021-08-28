@@ -1,4 +1,4 @@
-const MODULE = 'VIEW_ITEM_CONTAINER';
+const MODULE = 'ITEM_CONTAINER';
 
 export default {
   GET_ITEM: `${MODULE}/GET_ITEM`,
