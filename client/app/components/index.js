@@ -22,3 +22,4 @@ export { default as Dropdown } from './dropdpwn';
 export { default as Filters } from './filters';
 export { default as SubMenu } from './subMenu';
 export { default as Items } from './items';
+export { default as Item } from './item';
