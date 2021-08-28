@@ -8,7 +8,7 @@ const fetchItemPending = () => ({
 const fetchItemSuccess = (data) => ({
   type: CONSTANTS.GET_ITEM_SUCCESS,
   payload: {
-    Item: data,
+    item: data,
   },
 });
 

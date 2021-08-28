@@ -21,3 +21,4 @@ export { default as Social } from './footer/contact/social';
 export { default as Dropdown } from './dropdpwn';
 export { default as Filters } from './filters';
 export { default as SubMenu } from './subMenu';
+export { default as Items } from './items';

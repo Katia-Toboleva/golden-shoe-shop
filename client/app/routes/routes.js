@@ -1,5 +1,6 @@
 import Home from './home';
 import Womens from './womens';
+import Item from './item';
 
 const routes = [
   {
@@ -13,6 +14,13 @@ const routes = [
     component: Womens,
     props: {
       path: '/womens',
+      exact: true,
+    },
+  },
+  {
+    component: Item,
+    props: {
+      path: '/item/:id',
       exact: true,
     },
   },

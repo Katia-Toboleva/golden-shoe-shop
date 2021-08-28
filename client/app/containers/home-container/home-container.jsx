@@ -14,9 +14,9 @@ const HomeContainer = ({ actions, state }) => {
   const itemsInCart = [1,1,1,1,1,1,1,];
   //===========================================
 
-  useEffect(() => {
-    actions.fetchCategories();
-  }, []);
+  // useEffect(() => {
+  //   actions.fetchCategories();
+  // }, []);
 
   const handleCartClick = () => {
     setStage('cart');

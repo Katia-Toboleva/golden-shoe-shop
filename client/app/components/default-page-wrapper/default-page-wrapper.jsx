@@ -27,7 +27,7 @@ const DefaultPageWrapper = ({
       onSignInClick={onSignInClick}
       itemsInCart={itemsInCart}
     />
-    <Nav onNavClick={onNavClick} pageActive={pageActive}/>
+    <Nav onNavClick={onNavClick} pageActive={pageActive} />
     <div>
       <div>{children}</div>
     </div>

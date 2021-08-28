@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { DefaultPageWrapper, Categories, Spinner, Filters } from '@components';
+import {
+  DefaultPageWrapper, Items, Spinner, Filters,
+} from '@components';
 
-import * as categoriesActions from './state/actions';
+import * as itemsActions from '../items-container/state/actions';
 
 const WomensContainer = ({ actions, state }) => {
-  const { categories, fetchCategoriesRequestStatus } = state;
+  const { items, fetchItemsRequestStatus } = state;
   const [stage, setStage] = useState(undefined);
   const [pageActive, setPageActive] = useState('women');
   const [womanFilterSelected, setWomanFilterSelected] = useState(undefined);
@@ -15,14 +17,12 @@ const WomensContainer = ({ actions, state }) => {
   const [priceFilterSelected, setPriceFilterSelected] = useState(undefined);
   const [sortFilterSelected, setSortFilterSelected] = useState(undefined);
 
-  //REMOVE THIS LINE WHEN IMPLEMENTING FETCH
-  const itemsInCart = [1,1,1,1,1,1,1,];
-  //===========================================
-
-  console.log('page', pageActive)
+  // REMOVE THIS LINE WHEN IMPLEMENTING FETCH
+  const itemsInCart = [1, 1, 1, 1, 1, 1, 1];
+  //= ==========================================
 
   useEffect(() => {
-    actions.fetchCategories();
+    actions.fetchItems('woman');
   }, []);
 
   const handleCartClick = () => {
@@ -81,11 +81,11 @@ const WomensContainer = ({ actions, state }) => {
         priceFilterSelected={priceFilterSelected}
         sortFilterSelected={sortFilterSelected}
       />
-      {fetchCategoriesRequestStatus === 'rejected' && <div>Error!</div>}
-      {fetchCategoriesRequestStatus === 'pending' && <Spinner />}
-      {fetchCategoriesRequestStatus === 'success' && (
-        <Categories
-          categories={categories}
+      {fetchItemsRequestStatus === 'rejected' && <div>Error!</div>}
+      {fetchItemsRequestStatus === 'pending' && <Spinner />}
+      {fetchItemsRequestStatus === 'success' && (
+        <Items
+          items={items}
         />
       )}
     </DefaultPageWrapper>
@@ -93,12 +93,12 @@ const WomensContainer = ({ actions, state }) => {
   );
 };
 
-const mapStateToProps = ({ categories }) => ({
-  state: categories,
+const mapStateToProps = ({ items }) => ({
+  state: items,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  actions: bindActionCreators(categoriesActions, dispatch),
+  actions: bindActionCreators(itemsActions, dispatch),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(WomensContainer);

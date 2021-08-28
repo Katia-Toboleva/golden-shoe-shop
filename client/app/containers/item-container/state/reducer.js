@@ -4,8 +4,6 @@ import { createReducer } from '../../../state/utilities';
 const initialState = {
   item: {},
   fetchItemRequestStatus: null,
-  fetchModifyRequestStatus: null,
-  fetchDeleteItemRequestStatus: null,
 };
 
 const getItemPending = () => ({
