@@ -1,0 +1,13 @@
+.subMenu {
+  display: flex;
+  flex-direction: column;
+
+  .item {
+    padding: 5px;
+    cursor: pointer;
+
+    &:hover {
+      opacity: .5;
+    }
+  }
+}
