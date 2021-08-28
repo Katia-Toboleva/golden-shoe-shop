@@ -1,5 +1,5 @@
-import CONSTANTS from './view-item-container.constants';
-import * as api from './view-item-container.api';
+import CONSTANTS from './constants';
+import * as api from './api';
 
 const fetchItemPending = () => ({
   type: CONSTANTS.GET_ITEM_PENDING,
