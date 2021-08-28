@@ -1,5 +1,6 @@
 import React from 'react';
 import classnames from 'classnames/bind';
+import { Text, Row, Column } from '@components';
 
 import styles from './item.scss';
 
@@ -12,7 +13,14 @@ const getInlineStyles = (url) => ({
 const Item = ({ item }) => (
   <div className={styles['item']}>
     <div className={styles['item__image']} style={getInlineStyles(item.images[0])} />
-    <div>text</div>
+    <Row direction="column" center>
+      <Column>
+        <Text text={item.name} />
+      </Column>
+      <Column>
+        <Text text={`£ ${item.price}`} />
+      </Column>
+    </Row>
   </div>
 );
 

@@ -1,5 +1,28 @@
+@import 'globals.scss';
+
 .items {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin: 1em;
+
+  >:not(:last-child) {
+    margin-bottom: 1em;
+  }
+}
+
+@include viewport($size: tablet) {
+  .items {  
+    > * {
+      margin-left: 1em;
+    }
+  }
+}
+
+@include viewport($size: desktop) {
+  .items {  
+    > * {
+      margin-left: 2em;
+    }
+  }
 }
