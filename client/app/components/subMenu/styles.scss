@@ -5,8 +5,9 @@
   background-color: white;
   left: 0;
   height: 120px;
+  width: 100%;
   display: block;
-  overflow-y: auto;
+  overflow-y: scroll;
   animation: drop .35s ease-in;
 
   @keyframes drop {
@@ -15,7 +16,7 @@
     }
 
     to {
-      height: 150px;
+      height: 120px;
     }
   }
   .item {

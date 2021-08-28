@@ -1,5 +1,12 @@
 .filters {
-  width: 300px;
   margin-top: 24px;
   position: relative;
+
+  .box {
+    margin-top: 10px;
+
+    &--left {
+      margin-top: 10px;
+    }
+  }
 }

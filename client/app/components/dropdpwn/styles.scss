@@ -1,6 +1,6 @@
 .container {
   position: relative;
-  width: 70px;
+  margin-right: 5px;
 
   .dropdown {
     display: flex;
@@ -9,5 +9,10 @@
     padding: 5px;
     border: 1px solid black;
     cursor: pointer;
+    width: 100%;
+  }
+
+  &.no-margin {
+    margin-right: 0;
   }
 }

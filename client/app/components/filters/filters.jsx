@@ -25,48 +25,71 @@ const price = {
   items: [10, 20, 25, 30, 35, 40],
 };
 
+const sort = {
+  label: 'sort',
+  items: ['Newest', 'Price low-hight', 'Price hight-low', 'Best sellers'],
+};
+
 const Filters = ({
   onItemClick,
   womanFilterSelected,
   sizeFilterSelected,
   colorFilterSelected,
   priceFilterSelected,
+  sortFilterSelected,
 }) => {
   return (
     <div className={styles.filters}>
-      <Text text="Filter by" weight="bold" size="semismall"/>
-      <Row direction="row" alignItems="center" justifyContent="space-between">
+      <Row direction="row" justifyContent="space-between">
         <Column>
-          <Dropdown
-            label={woman.label}
-            onItemClick={onItemClick}
-            items={woman.items}
-            filterSelected={womanFilterSelected}
-          />
+          <Text text="Filter by" weight="bold" size="semismall"/>
+          <div className={styles['box--left']}>
+            <Row direction="row" alignItems="center" justifyContent="space-between">
+              <Column>
+                <Dropdown
+                  label={woman.label}
+                  onItemClick={onItemClick}
+                  items={woman.items}
+                  filterSelected={womanFilterSelected}
+                />
+              </Column>
+              <Column>
+                <Dropdown
+                  label={size.label}
+                  onItemClick={onItemClick}
+                  items={size.items}
+                  filterSelected={sizeFilterSelected}
+                />
+              </Column>
+              <Column>
+                <Dropdown
+                  label={color.label}
+                  onItemClick={onItemClick}
+                  items={color.items}
+                  filterSelected={colorFilterSelected}
+                />
+              </Column>
+              <Column>
+                <Dropdown
+                  label={price.label}
+                  onItemClick={onItemClick}
+                  items={price.items}
+                  filterSelected={priceFilterSelected}
+                />
+              </Column>
+            </Row>
+          </div>
         </Column>
         <Column>
-          <Dropdown
-            label={size.label}
-            onItemClick={onItemClick}
-            items={size.items}
-            filterSelected={sizeFilterSelected}
-          />
-        </Column>
-        <Column>
-          <Dropdown
-            label={color.label}
-            onItemClick={onItemClick}
-            items={color.items}
-            filterSelected={colorFilterSelected}
-          />
-        </Column>
-        <Column>
-          <Dropdown
-            label={price.label}
-            onItemClick={onItemClick}
-            items={price.items}
-            filterSelected={priceFilterSelected}
-          />
+          <Text text="Sort" weight="bold" size="semismall"/>
+          <div className={styles.box}>
+            <Dropdown
+              label={sort.label}
+              onItemClick={onItemClick}
+              items={sort.items}
+              filterSelected={sortFilterSelected}
+            />
+          </div>
         </Column>
       </Row>
     </div>

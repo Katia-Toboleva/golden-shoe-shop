@@ -8,15 +8,18 @@ import * as categoriesActions from './state/actions';
 const WomensContainer = ({ actions, state }) => {
   const { categories, fetchCategoriesRequestStatus } = state;
   const [stage, setStage] = useState(undefined);
-  const [pageActive, setPageActive] = useState(undefined);
+  const [pageActive, setPageActive] = useState('women');
   const [womanFilterSelected, setWomanFilterSelected] = useState(undefined);
   const [sizeFilterSelected, setSizeFilterSelected] = useState(undefined);
   const [colorFilterSelected, setColorFilterSelected] = useState(undefined);
   const [priceFilterSelected, setPriceFilterSelected] = useState(undefined);
+  const [sortFilterSelected, setSortFilterSelected] = useState(undefined);
 
   //REMOVE THIS LINE WHEN IMPLEMENTING FETCH
   const itemsInCart = [1,1,1,1,1,1,1,];
   //===========================================
+
+  console.log('page', pageActive)
 
   useEffect(() => {
     actions.fetchCategories();
@@ -55,6 +58,9 @@ const WomensContainer = ({ actions, state }) => {
     if (label === 'price') {
       setPriceFilterSelected(value);
     }
+    if (label === 'sort') {
+      setSortFilterSelected(value);
+    }
   };
 
   return (
@@ -73,6 +79,7 @@ const WomensContainer = ({ actions, state }) => {
         sizeFilterSelected={sizeFilterSelected}
         colorFilterSelected={colorFilterSelected}
         priceFilterSelected={priceFilterSelected}
+        sortFilterSelected={sortFilterSelected}
       />
       {fetchCategoriesRequestStatus === 'rejected' && <div>Error!</div>}
       {fetchCategoriesRequestStatus === 'pending' && <Spinner />}

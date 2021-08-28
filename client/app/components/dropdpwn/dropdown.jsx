@@ -4,13 +4,18 @@ import Icon from '../icon';
 import SubMenu from '../subMenu/subMenu';
 import styles from './styles.scss';
 
+import classnames from 'classnames/bind';
+const cx = classnames.bind(styles);
+
 const Dropdown = ({ label, items, onItemClick, filterSelected }) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className={styles.container}>
+    <div className={cx('container', {
+      'no-margin': label === 'sort',
+    })}>
       <div className={styles.dropdown} onClick={() => setOpen(!open)}>
-        <Text text={filterSelected ? filterSelected : label} />
+        <Text text={filterSelected ? filterSelected : label} transform="capitalize"/>
         <Icon icon="chevron" theme="black"/>
       </div>
       {open && (
