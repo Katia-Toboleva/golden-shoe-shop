@@ -1,8 +1,61 @@
+@import 'globals.scss';
+
 .categories {
   display: grid;
   grid-template-columns: 1fr;
+  grid-gap: 1em;
   
-  &__item {
+  &__item__0,
+  &__item__1,
+  &__item__2,
+  &__item__3,
+  &__item__4 {
     grid-column: 1/-1;
   }
 };
+
+@include viewport($size: tablet) {
+  .categories {
+    grid-template-columns: repeat(2, 1fr);
+
+    &__item__0 {
+      grid-column: 1/-1;
+    }
+
+    &__item__1,
+    &__item__3 {
+      grid-column: 1/2;
+    }
+
+    &__item__2,
+    &__item__4 {
+      grid-column: 2/3;
+    }
+  }
+}
+
+@include viewport($size: desktop) {
+  .categories {
+    grid-template-columns: repeat(4, 1fr);
+
+    &__item__0 {
+      grid-column: 1/-1;
+    }
+
+    &__item__1 {
+      grid-column: 1/2;
+    }
+
+    &__item__2 {
+      grid-column: 2/3;
+    }
+
+    &__item__3 {
+      grid-column: 3/4;
+    }
+
+    &__item__4 {
+      grid-column: 4/5;
+    }
+  }
+}

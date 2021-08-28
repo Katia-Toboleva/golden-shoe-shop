@@ -6,7 +6,14 @@
 
 @include viewport($size: tablet) {
   .container {
-    max-width: 1200px;
-    padding: 20px;
+    max-width: 56rem;
+    padding: 1.5em;
+  }
+}
+
+@include viewport($size: desktop) {
+  .container {
+    max-width: 81rem;
+    padding: 1em 3em;
   }
 }

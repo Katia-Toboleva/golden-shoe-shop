@@ -16,7 +16,7 @@ const Categories = ({
 
   return (
     <div className={styles['categories']}>
-      <div className={styles['categories__item']}>
+      <div className={styles['categories__item__0']}>
         <CategoryMaster
           index={0}
           category={masterCat.type}
@@ -25,7 +25,7 @@ const Categories = ({
         />
       </div>
       {otherCat.map((category, index) => (
-        <div className={styles['categories__item']}>
+        <div className={styles[`categories__item__${index + 1}`]}>
           <Category
             index={index + 1}
             category={category.type}

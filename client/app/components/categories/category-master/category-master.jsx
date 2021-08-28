@@ -6,7 +6,8 @@ const cx = classnames.bind(styles);
 
 const getInlineStyles = (url) => ({
   background: `url(${url}) center/cover no-repeat`,
-  height: '400px',
+  height: '60vh',
+  width: '100%',
 });
 
 const CategoryMaster = ({
