@@ -130,7 +130,11 @@
         "quantity": 345
       }
     ],
-    "image": "https: //images.unsplash.com/photo-1531310197839-ccf54634509e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=401&q=80",
+    "images": [
+      "https://clarks.scene7.com/is/image/Pangaea2Build/26157414_W_1?wid=1300&hei=1300&fmt=jpeg2000",
+      "https://clarks.scene7.com/is/image/Pangaea2Build/26157414_W_2?wid=1300&hei=1300&fmt=jpeg2000",
+      "https://clarks.scene7.com/is/image/Pangaea2Build/26157414_W_7?wid=1300&hei=1300&fmt=jpeg2000"
+    ],
     "colors": [
       "blue",
       "red",
@@ -228,7 +232,11 @@
         "quantity": 5
       }
     ],
-    "image": "https: //images.unsplash.com/photo-1494955464529-790512c65305?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1502&q=80",
+    "images": [
+      "https://clarks.scene7.com/is/image/Pangaea2Build/26161694_W_1?wid=1300&hei=1300&fmt=jpeg2000",
+      "https://clarks.scene7.com/is/image/Pangaea2Build/26161694_W_3?wid=1300&hei=1300&fmt=jpg",
+      "https://clarks.scene7.com/is/image/Pangaea2Build/26161694_W_7?wid=1300&hei=1300&fmt=jpg"
+    ],
     "colors": [
       "blue",
       "burgundy",
@@ -324,7 +332,11 @@
         "quantity": 55
       }
     ],
-    "image": "https: //images.unsplash.com/photo-1519707248995-fc3d4b7c52d5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=746&q=80",
+    "images": [
+      "https://clarks.scene7.com/is/image/Pangaea2Build/26162406_W_1?wid=1300&hei=1300&fmt=jpg",
+      "https://clarks.scene7.com/is/image/Pangaea2Build/26162406_W_3?wid=1300&hei=1300&fmt=jpg",
+      "https://clarks.scene7.com/is/image/Pangaea2Build/26162406_W_7?wid=1300&hei=1300&fmt=jpg"
+    ],
     "colors": [
       "blue",
       "yellow",
@@ -369,7 +381,11 @@
         "quantity": 50
       }
     ],
-    "image": "https: //images.unsplash.com/photo-1543163521-1bf539c55dd2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    "images": [
+      "https://clarks.scene7.com/is/image/Pangaea2Build/26161180_W_1?wid=1300&hei=1300&fmt=jpg",
+      "https://clarks.scene7.com/is/image/Pangaea2Build/26161180_W_3?wid=1300&hei=1300&fmt=jpg",
+      "https://clarks.scene7.com/is/image/Pangaea2Build/26161180_W_7?wid=1300&hei=1300&fmt=jpg"
+    ],
     "colors": [
       "blue"
     ],
@@ -437,7 +453,11 @@
         "quantity": 0
       }
     ],
-    "image": "https: //images.unsplash.com/photo-1499013819532-e4ff41b00669?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80",
+    "images": [
+      "https://clarks.scene7.com/is/image/Pangaea2Build/26163305_W_1?wid=1300&hei=1300&fmt=jpg",
+      "https://clarks.scene7.com/is/image/Pangaea2Build/26163305_W_3?wid=1300&hei=1300&fmt=jpg",
+      "https://clarks.scene7.com/is/image/Pangaea2Build/26163305_W_7?wid=1300&hei=1300&fmt=jpg"
+    ],
     "colors": [
       "blue", "black"
     ],
@@ -505,7 +525,11 @@
         "quantity": 80
       }
     ],
-    "image": "https: //images.unsplash.com/photo-1515347619252-60a4bf4fff4f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=763&q=80",
+    "images": [
+      "https://clarks.scene7.com/is/image/Pangaea2Build/26160927_W_1?wid=1300&hei=1300&fmt=jpg",
+      "https://clarks.scene7.com/is/image/Pangaea2Build/26160927_W_3?wid=1300&hei=1300&fmt=jpg",
+      "https://clarks.scene7.com/is/image/Pangaea2Build/26160927_W_7?wid=1300&hei=1300&fmt=jpg"
+    ],
     "colors": [
       "blue",
       "white"
