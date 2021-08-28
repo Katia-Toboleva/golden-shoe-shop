@@ -10,9 +10,17 @@
     border: 1px solid black;
     cursor: pointer;
     width: 100%;
+
+    .icon {
+      margin-left: 5px;
+    }
   }
 
   &.no-margin {
     margin-right: 0;
+  }
+
+  &.active {
+    background-color: rgba(grey, .2);
   }
 }
