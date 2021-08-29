@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { withRouter } from 'react-router-dom';
 
 import {
   Container,
@@ -7,18 +8,21 @@ import {
   Footer,
 } from '@components';
 
-const DefaultPageWrapper = ({
+const DefaultPageWrapper = withRouter(({
   children,
   itemsInCart,
+  history,
 }) => {
   const [pageActive, setPageActive] = useState('home');
 
   const handleCartClick = () => {
-
+    setPageActive('');
+    history.push('/cart');
   };
 
   const handleHomeClick = () => {
-
+    setPageActive('');
+    history.push('/');
   };
 
   const handleSearchClick = () => {
@@ -31,6 +35,7 @@ const DefaultPageWrapper = ({
 
   const handleNavClick = (value) => {
     setPageActive(value);
+    history.push('/womens');
   };
 
   return (
@@ -49,6 +54,6 @@ const DefaultPageWrapper = ({
       <Footer />
     </Container>
   );
-};
+});
 
 export default DefaultPageWrapper;
