@@ -1,8 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import {
-  Row,
-  Column,
   Container,
   Header,
   Nav,
@@ -11,28 +9,46 @@ import {
 
 const DefaultPageWrapper = ({
   children,
-  onSignInClick,
-  onSearchClick,
-  onHomeClick,
-  onCartClick,
-  onNavClick,
-  pageActive,
   itemsInCart,
-}) => (
-  <Container>
-    <Header
-      onCartClick={onCartClick}
-      onHomeClick={onHomeClick}
-      onSearchClick={onSearchClick}
-      onSignInClick={onSignInClick}
-      itemsInCart={itemsInCart}
-    />
-    <Nav onNavClick={onNavClick} pageActive={pageActive} />
-    <div>
-      <div>{children}</div>
-    </div>
-    <Footer />
-  </Container>
-);
+}) => {
+  const [pageActive, setPageActive] = useState('home');
+
+  const handleCartClick = () => {
+
+  };
+
+  const handleHomeClick = () => {
+
+  };
+
+  const handleSearchClick = () => {
+
+  };
+
+  const handleSignInClick = () => {
+
+  };
+
+  const handleNavClick = (value) => {
+    setPageActive(value);
+  };
+
+  return (
+    <Container>
+      <Header
+        onCartClick={handleCartClick}
+        onHomeClick={handleHomeClick}
+        onSearchClick={handleSearchClick}
+        onSignInClick={handleSignInClick}
+        itemsInCart={itemsInCart}
+      />
+      <Nav onNavClick={handleNavClick} pageActive={pageActive} />
+      <div>
+        <div>{children}</div>
+      </div>
+      <Footer />
+    </Container>
+  );
+};
 
 export default DefaultPageWrapper;

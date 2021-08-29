@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { DefaultPageWrapper, Categories, Spinner } from '@components';
@@ -7,8 +7,6 @@ import * as categoriesActions from './state/actions';
 
 const HomeContainer = ({ actions, state }) => {
   const { categories, fetchCategoriesRequestStatus } = state;
-  const [stage, setStage] = useState(undefined);
-  const [pageActive, setPageActive] = useState(undefined);
 
   //REMOVE THIS LINE WHEN IMPLEMENTING FETCH
   const itemsInCart = [1,1,1,1,1,1,1,];
@@ -18,34 +16,9 @@ const HomeContainer = ({ actions, state }) => {
     actions.fetchCategories();
   }, []);
 
-  const handleCartClick = () => {
-    setStage('cart');
-  };
-
-  const handleHomeClick = () => {
-
-  };
-
-  const handleSearchClick = () => {
-    setStage('search');
-  };
-
-  const handleSignInClick = () => {
-    setStage('signIn');
-  };
-
-  const handleNavClick = (value) => {
-    setPageActive(value);
-  };
-
   return (
     <DefaultPageWrapper
-      onCartClick={handleCartClick}
-      onHomeClick={handleHomeClick}
-      onSearchClick={handleSearchClick}
-      onSignInClick={handleSignInClick}
-      onNavClick={handleNavClick}
-      pageActive={pageActive}
+      pageActive="home"
       itemsInCart={itemsInCart}
     >
       {fetchCategoriesRequestStatus === 'rejected' && <div>Error!</div>}

@@ -1,10 +1,17 @@
 import React, { useEffect } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import {
+  DefaultPageWrapper,
+} from '@components';
 import * as cartActions from './state/actions';
 
 const CartContainer = ({ state, actions }) => {
   const { cart } = state;
+
+  // REMOVE THIS LINE WHEN IMPLEMENTING FETCH
+  const itemsInCart = [1, 1, 1, 1, 1, 1, 1];
+  //= ==========================================
 
   useEffect(() => {
     actions.getCart();
@@ -12,7 +19,13 @@ const CartContainer = ({ state, actions }) => {
 
   return (
     <>
-      {/* <Cart /> */}
+      <DefaultPageWrapper
+        pageActive="women"
+        itemsInCart={itemsInCart}
+      >
+        {/* <Cart /> */}
+
+      </DefaultPageWrapper>
     </>
   );
 };

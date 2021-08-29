@@ -11,8 +11,6 @@ import { fetchItems } from '../items-container/state/actions';
 const WomensContainer = (props) => {
   const { fetchItemRequestStatus, item } = props.item;
   const { fetchItemsRequestStatus, items } = props.items;
-  const [stage, setStage] = useState(undefined);
-  const [pageActive, setPageActive] = useState('women');
   const [womanFilterSelected, setWomanFilterSelected] = useState(undefined);
   const [sizeFilterSelected, setSizeFilterSelected] = useState(undefined);
   const [colorFilterSelected, setColorFilterSelected] = useState(undefined);
@@ -34,26 +32,6 @@ const WomensContainer = (props) => {
     }
     props.fetchItems('woman');
   }, [fetchItemRequestStatus]);
-
-  const handleCartClick = () => {
-    setStage('cart');
-  };
-
-  const handleHomeClick = () => {
-
-  };
-
-  const handleSearchClick = () => {
-    setStage('search');
-  };
-
-  const handleSignInClick = () => {
-    setStage('signIn');
-  };
-
-  const handleNavClick = (value) => {
-    setPageActive(value);
-  };
 
   const handleFilterClick = (value, label) => {
     if (label === 'women') {
@@ -104,12 +82,7 @@ const WomensContainer = (props) => {
         />
       )}
       <DefaultPageWrapper
-        onCartClick={handleCartClick}
-        onHomeClick={handleHomeClick}
-        onSearchClick={handleSearchClick}
-        onSignInClick={handleSignInClick}
-        onNavClick={handleNavClick}
-        pageActive={pageActive}
+        pageActive="women"
         itemsInCart={itemsInCart}
       >
         <Filters
