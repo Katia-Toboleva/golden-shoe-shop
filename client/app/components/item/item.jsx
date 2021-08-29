@@ -10,8 +10,8 @@ const getInlineStyles = (url) => ({
   background: `url(${url}) center/contain no-repeat`,
 });
 
-const Item = ({ item }) => (
-  <div className={styles['item']}>
+const Item = ({ item, onItemClick }) => (
+  <div className={styles['item']} onClick={() => onItemClick(item._id)}>
     <div className={styles['item__image']} style={getInlineStyles(item.images[0])} />
     <Row direction="column" center>
       <Column>

@@ -31,69 +31,67 @@ const sort = {
 };
 
 const Filters = ({
-  onItemClick,
+  onFilterClick,
   womanFilterSelected,
   sizeFilterSelected,
   colorFilterSelected,
   priceFilterSelected,
   sortFilterSelected,
-}) => {
-  return (
-    <div className={styles.filters}>
-      <Row direction="row" justifyContent="space-between">
-        <Column>
-          <Text text="Filter by" weight="bold" size="semismall"/>
-          <div className={styles['box--left']}>
-            <Row direction="row" alignItems="center" justifyContent="space-between">
-              <Column>
-                <Dropdown
-                  label={woman.label}
-                  onItemClick={onItemClick}
-                  items={woman.items}
-                  filterSelected={womanFilterSelected}
-                />
-              </Column>
-              <Column>
-                <Dropdown
-                  label={size.label}
-                  onItemClick={onItemClick}
-                  items={size.items}
-                  filterSelected={sizeFilterSelected}
-                />
-              </Column>
-              <Column>
-                <Dropdown
-                  label={color.label}
-                  onItemClick={onItemClick}
-                  items={color.items}
-                  filterSelected={colorFilterSelected}
-                />
-              </Column>
-              <Column>
-                <Dropdown
-                  label={price.label}
-                  onItemClick={onItemClick}
-                  items={price.items}
-                  filterSelected={priceFilterSelected}
-                />
-              </Column>
-            </Row>
-          </div>
-        </Column>
-        <Column>
-          <Text text="Sort" weight="bold" size="semismall"/>
-          <div className={styles.box}>
-            <Dropdown
-              label={sort.label}
-              onItemClick={onItemClick}
-              items={sort.items}
-              filterSelected={sortFilterSelected}
-            />
-          </div>
-        </Column>
-      </Row>
-    </div>
-  );
-};
+}) => (
+  <div className={styles.filters}>
+    <Row direction="row" justifyContent="space-between">
+      <Column>
+        <Text text="Filter by" weight="bold" size="semismall" />
+        <div className={styles['box--left']}>
+          <Row direction="row" alignItems="center" justifyContent="space-between">
+            <Column>
+              <Dropdown
+                label={woman.label}
+                onFilterClick={onFilterClick}
+                items={woman.items}
+                filterSelected={womanFilterSelected}
+              />
+            </Column>
+            <Column>
+              <Dropdown
+                label={size.label}
+                onFilterClick={onFilterClick}
+                items={size.items}
+                filterSelected={sizeFilterSelected}
+              />
+            </Column>
+            <Column>
+              <Dropdown
+                label={color.label}
+                onFilterClick={onFilterClick}
+                items={color.items}
+                filterSelected={colorFilterSelected}
+              />
+            </Column>
+            <Column>
+              <Dropdown
+                label={price.label}
+                onFilterClick={onFilterClick}
+                items={price.items}
+                filterSelected={priceFilterSelected}
+              />
+            </Column>
+          </Row>
+        </div>
+      </Column>
+      <Column>
+        <Text text="Sort" weight="bold" size="semismall" />
+        <div className={styles.box}>
+          <Dropdown
+            label={sort.label}
+            onFilterClick={onFilterClick}
+            items={sort.items}
+            filterSelected={sortFilterSelected}
+          />
+        </div>
+      </Column>
+    </Row>
+  </div>
+);
 
 export default Filters;

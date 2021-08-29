@@ -15,11 +15,11 @@
     position: absolute;
   }
 
-  &--theme-delete {
-    background-color: rgba($color-amaranth-red, .9);
-  }
-
   &--theme-loading {
     background-color: rgba($color-white, .9);
+  }
+
+  &--theme-view-item {
+    background-color: rgba($color-white, .7);
   }
 }

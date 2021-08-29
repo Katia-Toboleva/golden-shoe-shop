@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames/bind';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { Button } from '@components';
+import { Button, Icon } from '@components';
 
 import styles from './modal.scss';
 
@@ -53,7 +53,9 @@ const Modal = ({
                 onAction: handleAction,
               })}
 
-            <Button onClick={() => handleAction('hide')} icon="hide" size="x-large" />
+            <Button onClick={() => handleAction('close')}>
+              <Icon icon="close" theme="grey" size="medium" />
+            </Button>
           </div>
         </motion.div>
       )}
@@ -63,22 +65,12 @@ const Modal = ({
 
 Modal.defaultProps = {
   size: 'full-page',
-  theme: 'delete',
+  theme: 'panel-loading',
   panel: {
     type: '',
     props: {},
   },
   onAction: () => {},
-};
-
-Modal.propTypes = {
-  size: PropTypes.oneOf(['full-page']),
-  theme: PropTypes.oneOf(['delete', 'loading']),
-  type: PropTypes.oneOf(['default', 'loading']),
-  panel: PropTypes.shape({
-    type: PropTypes.string,
-  }),
-  onAction: PropTypes.func,
 };
 
 export default Modal;

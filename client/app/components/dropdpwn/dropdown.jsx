@@ -1,29 +1,32 @@
 import React, { useState } from 'react';
+import classnames from 'classnames/bind';
 import Text from '../text';
 import Icon from '../icon';
 import SubMenu from '../subMenu/subMenu';
 import styles from './styles.scss';
 
-import classnames from 'classnames/bind';
 const cx = classnames.bind(styles);
 
-const Dropdown = ({ label, items, onItemClick, filterSelected }) => {
+const Dropdown = ({
+  label, items, onFilterClick, filterSelected,
+}) => {
   const [open, setOpen] = useState(false);
 
   return (
     <div className={cx('container', {
       'no-margin': label === 'sort',
-      'active': filterSelected,
-    })}>
+      active: filterSelected,
+    })}
+    >
       <div className={styles.dropdown} onClick={() => setOpen(!open)}>
-        <Text text={filterSelected ? filterSelected : label} transform="capitalize"/>
+        <Text text={filterSelected || label} transform="capitalize" />
         <div className={styles.icon}>
-          <Icon icon="chevron" theme="black"/>
+          <Icon icon="chevron" theme="black" />
         </div>
       </div>
       {open && (
         <div onClick={() => setOpen(!open)}>
-          <SubMenu items={items} onItemClick={onItemClick} label={label}/>
+          <SubMenu items={items} onFilterClick={onFilterClick} label={label} />
         </div>
       )}
     </div>

@@ -1,14 +1,16 @@
+/* eslint-disable react/destructuring-assignment */
 import React, { useState, useEffect } from 'react';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import {
-  DefaultPageWrapper, Items, Spinner, Filters,
+  DefaultPageWrapper, Items, Spinner, Filters, Modal,
 } from '@components';
 
-import * as itemsActions from '../items-container/state/actions';
+import { fetchItem } from '../item-container/state/actions';
+import { fetchItems } from '../items-container/state/actions';
 
-const WomensContainer = ({ actions, state }) => {
-  const { items, fetchItemsRequestStatus } = state;
+const WomensContainer = (props) => {
+  const { fetchItemRequestStatus, item } = props.item;
+  const { fetchItemsRequestStatus, items } = props.items;
   const [stage, setStage] = useState(undefined);
   const [pageActive, setPageActive] = useState('women');
   const [womanFilterSelected, setWomanFilterSelected] = useState(undefined);
@@ -16,14 +18,22 @@ const WomensContainer = ({ actions, state }) => {
   const [colorFilterSelected, setColorFilterSelected] = useState(undefined);
   const [priceFilterSelected, setPriceFilterSelected] = useState(undefined);
   const [sortFilterSelected, setSortFilterSelected] = useState(undefined);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   // REMOVE THIS LINE WHEN IMPLEMENTING FETCH
   const itemsInCart = [1, 1, 1, 1, 1, 1, 1];
   //= ==========================================
 
   useEffect(() => {
-    actions.fetchItems('woman');
+    props.fetchItems('woman');
   }, []);
+
+  useEffect(() => {
+    if (fetchItemRequestStatus === 'success') {
+      setIsModalVisible(true);
+    }
+    props.fetchItems('woman');
+  }, [fetchItemRequestStatus]);
 
   const handleCartClick = () => {
     setStage('cart');
@@ -45,7 +55,7 @@ const WomensContainer = ({ actions, state }) => {
     setPageActive(value);
   };
 
-  const handleItemClick = (value, label) => {
+  const handleFilterClick = (value, label) => {
     if (label === 'women') {
       setWomanFilterSelected(value);
     }
@@ -63,42 +73,75 @@ const WomensContainer = ({ actions, state }) => {
     }
   };
 
+  const handleItemClick = (id) => {
+    props.fetchItem(id);
+  };
+
+  const handleModalAction = (action) => {
+    if (action === 'close') {
+      setIsModalVisible(false);
+    }
+    if (action === 'addItem') {
+      // TODO implement addItem to cart
+      console.log('ADD');
+    }
+  };
+
   return (
-    <DefaultPageWrapper
-      onCartClick={handleCartClick}
-      onHomeClick={handleHomeClick}
-      onSearchClick={handleSearchClick}
-      onSignInClick={handleSignInClick}
-      onNavClick={handleNavClick}
-      pageActive={pageActive}
-      itemsInCart={itemsInCart}
-    >
-      <Filters
-        onItemClick={handleItemClick}
-        womanFilterSelected={womanFilterSelected}
-        sizeFilterSelected={sizeFilterSelected}
-        colorFilterSelected={colorFilterSelected}
-        priceFilterSelected={priceFilterSelected}
-        sortFilterSelected={sortFilterSelected}
-      />
-      {fetchItemsRequestStatus === 'rejected' && <div>Error!</div>}
-      {fetchItemsRequestStatus === 'pending' && <Spinner />}
-      {fetchItemsRequestStatus === 'success' && (
-        <Items
-          items={items}
+    <>
+      {fetchItemRequestStatus === 'rejected' && <div>Error!</div>}
+      {fetchItemRequestStatus === 'pending' && <Spinner />}
+      {fetchItemRequestStatus === 'success' && (
+        <Modal
+          panel={{
+            type: 'view-item',
+            props: item,
+          }}
+          visible={isModalVisible}
+          theme="view-item"
+          size="full-page"
+          onAction={handleModalAction}
         />
       )}
-    </DefaultPageWrapper>
+      <DefaultPageWrapper
+        onCartClick={handleCartClick}
+        onHomeClick={handleHomeClick}
+        onSearchClick={handleSearchClick}
+        onSignInClick={handleSignInClick}
+        onNavClick={handleNavClick}
+        pageActive={pageActive}
+        itemsInCart={itemsInCart}
+      >
+        <Filters
+          onFilterClick={handleFilterClick}
+          womanFilterSelected={womanFilterSelected}
+          sizeFilterSelected={sizeFilterSelected}
+          colorFilterSelected={colorFilterSelected}
+          priceFilterSelected={priceFilterSelected}
+          sortFilterSelected={sortFilterSelected}
+        />
+        {fetchItemsRequestStatus === 'rejected' && <div>Error!</div>}
+        {fetchItemsRequestStatus === 'pending' && <Spinner />}
+        {fetchItemsRequestStatus === 'success' && (
+          <Items
+            items={items}
+            onItemClick={handleItemClick}
+          />
+        )}
+      </DefaultPageWrapper>
+    </>
 
   );
 };
 
-const mapStateToProps = ({ items }) => ({
-  state: items,
+const mapStateToProps = ({ item, items }) => ({
+  item,
+  items,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  actions: bindActionCreators(itemsActions, dispatch),
+const mapDispatchToProps = ({
+  fetchItem,
+  fetchItems,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(WomensContainer);
