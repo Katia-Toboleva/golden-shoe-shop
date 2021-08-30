@@ -12,7 +12,7 @@ const getInlineStyles = (url) => ({
 
 const Item = ({ item, onItemClick }) => (
   <div className={styles['item']} onClick={() => onItemClick(item._id)}>
-    <div className={styles['item__image']} style={getInlineStyles(item.images[0])} />
+    <div className={styles['item__image']} style={getInlineStyles(item.images[0].urls[0])} />
     <Row direction="column" center>
       <Column>
         <Text text={item.name} />
