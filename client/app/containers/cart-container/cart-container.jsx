@@ -1,47 +1,85 @@
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable no-await-in-loop */
+/* eslint-disable object-shorthand */
 import React, { useEffect, useState } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import {
-  DefaultPageWrapper, Spinner, Cart,
+  DefaultPageWrapper, Spinner, Cart, Text,
 } from '@components';
 
 import * as itemActions from '../item-container/state/actions';
 import { fetchItem } from '../item-container/state/api';
-import items from '../../components/items';
 
 const CartContainer = ({ actions, state }) => {
-  const { item, fetchItemRequestStatus } = state;
-  const { checkedItems, setCheckedItems } = useState([]);
+  const [checkedItems, setCheckedItems] = useState([]);
+  const [fetchItemsRequestStatus, setFetchItemsRequest] = useState(null);
 
   useEffect(() => {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    //  NOTE: refetching for getting latest availability
     if (cart.length) {
-      const fetchData = async (itemId) => {
+      try {
+        setFetchItemsRequest('pending');
+        const fetchData = async (id) => await fetchItem(id).then(r => r.json());
 
-          await fetchItem(itemId).then(r => r.json());
-      };
+        //  NOTE: refetching selected items for getting latest availability
+        const recheckItemAvailability = async () => {
+          const arr = [];
 
-      cart.map(el => fetchData(el.itemId));
-      console.log(item);
+          for (const { itemId, selectedOptions } of cart) {
+            const latestItemObj = await fetchData(itemId);
+
+            const { availability } = latestItemObj;
+
+            const itemIndex = availability.findIndex((el) => selectedOptions.color === el.color
+              && selectedOptions.size === el.size && el.quantity > 0);
+
+            let finalLatestObj;
+
+            if (itemIndex !== -1) {
+              finalLatestObj = {
+                ...latestItemObj,
+                selectedOptions: selectedOptions,
+                isItemAvailable: true,
+              };
+            } else {
+              finalLatestObj = {
+                ...latestItemObj,
+                selectedOptions: selectedOptions,
+                isItemAvailable: false,
+              };
+            }
+
+            arr.push(finalLatestObj);
+          }
+          setCheckedItems(arr);
+        };
+
+        recheckItemAvailability();
+        setFetchItemsRequest('success');
+      } catch (error) {
+        console.log(error);
+        setFetchItemsRequest('rejected');
+        throw Error;
+      }
     }
   }, []);
-
-  console.log(checkedItems, 'checkedItems');
 
   return (
     <>
       <DefaultPageWrapper
         pageActive="cart"
       >
-        {fetchItemRequestStatus === 'rejected' && <div>Error!</div>}
-        {fetchItemRequestStatus === 'pending' && <Spinner />}
-        {fetchItemRequestStatus === 'success' && (
-          <>
-            <Cart />
-            <div>{item.name}</div>
-          </>
+        {fetchItemsRequestStatus === 'rejected' && <div>Error!</div>}
+        {fetchItemsRequestStatus === 'pending' && <Spinner />}
+        {fetchItemsRequestStatus === 'success' && (
+        <>
+          {/* <Cart /> */}
+          {checkedItems.map((el, i) => (
+            <Text text={el.name} />
+
+          ))}
+        </>
         )}
       </DefaultPageWrapper>
     </>
