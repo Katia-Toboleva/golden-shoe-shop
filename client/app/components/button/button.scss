@@ -30,6 +30,14 @@
     background-color: black;
   }
 
+  &--border-black {
+    border: 1px solid black;
+  }
+
+  &--border-grey {
+    border: 1px solid grey;
+  }
+
   &.padded {
     padding: 0.4em 1em;
   }

@@ -11,6 +11,7 @@ const Button = ({
   children,
   hoverable = false,
   hoverOpacity = false,
+  border,
   round,
   active,
   padded,
@@ -20,6 +21,7 @@ const Button = ({
       className={cx('button', {
         [`button--size-${size}`]: size,
         [`button--theme-${theme}`]: theme,
+        [`button--border-${border}`]: border,
         'hoverable': hoverable && !active,
         round,
         active,
