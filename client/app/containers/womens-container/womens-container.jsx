@@ -58,6 +58,7 @@ const WomensContainer = (props) => {
     if (action === 'add-item') {
       const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
       localStorage.setItem('cart', JSON.stringify([...cartItems, selectedItem]));
+      setIsModalVisible(false);
     }
   };
 
