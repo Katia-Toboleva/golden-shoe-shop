@@ -1,0 +1,14 @@
+@import 'globals.scss';
+
+.cart-item {
+
+  &__image {
+    width: 40vh;
+  }
+
+  &__details {
+    >:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+}

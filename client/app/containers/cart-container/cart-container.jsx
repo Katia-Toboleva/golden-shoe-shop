@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import {
-  DefaultPageWrapper, Spinner, Cart, Text,
+  DefaultPageWrapper, Spinner, Cart,
 } from '@components';
 
 import * as itemActions from '../item-container/state/actions';
@@ -65,6 +65,7 @@ const CartContainer = ({ actions, state }) => {
     }
   }, []);
 
+  console.log(checkedItems);
   return (
     <>
       <DefaultPageWrapper
@@ -74,11 +75,9 @@ const CartContainer = ({ actions, state }) => {
         {fetchItemsRequestStatus === 'pending' && <Spinner />}
         {fetchItemsRequestStatus === 'success' && (
         <>
-          {/* <Cart /> */}
-          {checkedItems.map((el, i) => (
-            <Text text={el.name} />
-
-          ))}
+          <Cart
+            items={checkedItems}
+          />
         </>
         )}
       </DefaultPageWrapper>

@@ -23,12 +23,14 @@ const SizeSelector = ({
           <Text text="Size " weight="bold" />
           <Text text={sizeSelected} />
         </div>
-        <Button onClick={onSizeGuide}>
-          <Text text="size guide" color="blue" transform="capitalize" />
-        </Button>
+        {onSizeGuide && (
+          <Button onClick={onSizeGuide}>
+            <Text text="size guide" color="blue" transform="capitalize" />
+          </Button>
+        )}
       </div>
       <div className={styles.selector}>
-        {sizes.map((s) => (
+        {sizes && sizes.length && sizes.map((s) => (
           <div
             onClick={getItemAvaialble(s) ? () => onSizeSelect(s) : null}
             className={cx('size', {
