@@ -8,10 +8,6 @@ import * as categoriesActions from './state/actions';
 const HomeContainer = ({ actions, state }) => {
   const { categories, fetchCategoriesRequestStatus } = state;
 
-  //REMOVE THIS LINE WHEN IMPLEMENTING FETCH
-  const itemsInCart = [1,1,1,1,1,1,1,];
-  //===========================================
-
   useEffect(() => {
     actions.fetchCategories();
   }, []);
@@ -19,7 +15,6 @@ const HomeContainer = ({ actions, state }) => {
   return (
     <DefaultPageWrapper
       pageActive="home"
-      itemsInCart={itemsInCart}
     >
       {fetchCategoriesRequestStatus === 'rejected' && <div>Error!</div>}
       {fetchCategoriesRequestStatus === 'pending' && <Spinner />}

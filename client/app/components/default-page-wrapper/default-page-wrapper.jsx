@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 
 import {
@@ -10,10 +10,15 @@ import {
 
 const DefaultPageWrapper = withRouter(({
   children,
-  itemsInCart,
   history,
 }) => {
   const [pageActive, setPageActive] = useState('home');
+  const [cartItemsCount, setCartItemsCount] = useState(0);
+  const cart =  JSON.parse(localStorage.getItem('cart')) || [];
+
+  useEffect(() => {
+    setCartItemsCount(cart.length);
+  }, [cart, cartItemsCount]);
 
   const handleCartClick = () => {
     setPageActive('');
@@ -45,7 +50,7 @@ const DefaultPageWrapper = withRouter(({
         onHomeClick={handleHomeClick}
         onSearchClick={handleSearchClick}
         onSignInClick={handleSignInClick}
-        itemsInCart={itemsInCart}
+        itemsInCart={cartItemsCount}
       />
       <Nav onNavClick={handleNavClick} pageActive={pageActive} />
       <div>

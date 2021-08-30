@@ -36,7 +36,7 @@ const Header = ({
             </Column>
             <Column>
               <Button onClick={onCartClick}>
-                <Icon icon="cart" theme="grey" size="medium" items={itemsInCart}/>
+                <Icon icon="cart" theme="grey" size="large" items={itemsInCart}/>
               </Button>
             </Column>
           </Row>

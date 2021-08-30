@@ -18,10 +18,6 @@ const WomensContainer = (props) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [filtersApplied, setFiltersApplied] = useState(false);
 
-  // REMOVE THIS LINE WHEN IMPLEMENTING FETCH
-  const itemsInCart = [1, 1, 1, 1, 1, 1, 1];
-  //= ==========================================
-
   useEffect(() => {
     props.fetchItems('woman');
   }, []);
@@ -59,6 +55,7 @@ const WomensContainer = (props) => {
     if (action === 'add-item') {
       const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
       localStorage.setItem('cart', JSON.stringify([...cartItems, selectedItem]));
+      setIsModalVisible(false);
     }
   };
 
@@ -98,7 +95,6 @@ const WomensContainer = (props) => {
       )}
       <DefaultPageWrapper
         pageActive="women"
-        itemsInCart={itemsInCart}
       >
         <Filters
           onFilterClick={handleFilterClick}
