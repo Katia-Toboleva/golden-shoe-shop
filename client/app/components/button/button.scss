@@ -8,6 +8,10 @@
 
   &.round {
     border-radius: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &--size-small {
@@ -28,6 +32,10 @@
 
   &--theme-black {
     background-color: black;
+  }
+
+  &--theme-orange {
+    background-color: rgb(255, 112, 17);
   }
 
   &--border-black {

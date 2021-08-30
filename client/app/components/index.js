@@ -29,3 +29,4 @@ export { default as SizeSelector } from './modal/panels/view-item/sizeSelector';
 export { default as QuantitySelector } from './modal/panels/view-item/quantitySelector';
 export { default as Cart } from './cart';
 export { default as Questions } from './questions';
+export { default as Chat } from './chat';

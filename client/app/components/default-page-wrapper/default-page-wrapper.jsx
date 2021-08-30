@@ -6,6 +6,7 @@ import {
   Header,
   Nav,
   Footer,
+  Chat,
 } from '@components';
 
 const DefaultPageWrapper = withRouter(({
@@ -72,6 +73,7 @@ const DefaultPageWrapper = withRouter(({
         <div>{children}</div>
       </div>
       <Footer onFooterClick={handleFooterClick}/>
+      <Chat />
     </Container>
   );
 });
