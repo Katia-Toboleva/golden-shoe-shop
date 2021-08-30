@@ -6,6 +6,13 @@
 
   input {
     margin-left: 20px;
-    width: 50px;
+    width: 15px;
+    margin-right: 10px;
+  }
+
+  .buttons {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
   }
 }

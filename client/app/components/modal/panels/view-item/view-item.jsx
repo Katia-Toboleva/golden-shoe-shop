@@ -38,11 +38,25 @@ const ViewItem = ({ onModalAction, onCloseModalAction, item }) => {
   };
 
   const handleQuanityChange = (e) => {
-    const itemSelected = item.availability.filter((i) => i.color === colorSelected && i.size === sizeSelected)[0];
+    const itemSelected = item.availability.find((i) => i.color === colorSelected && i.size === sizeSelected);
     const value = Number(e.target.value);
 
     if (value <= Number(itemSelected.quantity)) {
       setQuantity(value);
+    }
+  };
+
+  const handleMinusClick = () => {
+    if (quantity !== 1) {
+      setQuantity(quantity - 1);
+    }
+  };
+
+  const handlePlusClick = () => {
+    const itemSelected = item.availability.find((i) => i.color === colorSelected && i.size === sizeSelected);
+
+    if (quantity < Number(itemSelected.quantity)) {
+      setQuantity(quantity + 1);
     }
   };
 
@@ -80,7 +94,12 @@ const ViewItem = ({ onModalAction, onCloseModalAction, item }) => {
               availability={item.availability.filter((i) => i.quantity !== 0 && i.color === colorSelected)}
               onSizeGuide={handleSizeGuide}
             />
-            <QuantitySelector quantity={quantity} onQuantityChange={handleQuanityChange} />
+            <QuantitySelector
+              quantity={quantity}
+              onQuantityChange={handleQuanityChange}
+              onMinus={handleMinusClick}
+              onPlus={handlePlusClick}
+            />
             {sizeGuide && (
               <div className={styles.sizes}>
                 <Image src="https://i.ytimg.com/vi/n4-Q24a3DEM/maxresdefault.jpg"/>
