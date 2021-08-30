@@ -7,7 +7,7 @@ const ViewItem = ({ onModalAction, onCloseModalAction, item }) => {
   // TODO add logic for updating selectedOptions with filters (color, size, quantity).
   // TODO add default values to selectedOptions
   const [selectedOptions, setSelectedOptions] = useState({
-    color: '',
+    color: item.colors[0],
     size: '',
     quantity: '',
   });
@@ -37,7 +37,7 @@ const ViewItem = ({ onModalAction, onCloseModalAction, item }) => {
             </Column>
           </Row>
           <Button padded theme="black" onClick={() => onModalAction('add-item', {
-            item,
+            itemId: item._id,
             selectedOptions,
           })}
           >
