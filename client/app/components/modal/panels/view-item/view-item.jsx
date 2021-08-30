@@ -60,6 +60,8 @@ const ViewItem = ({ onModalAction, onCloseModalAction, item }) => {
     }
   };
 
+  const available = item.availability.filter((i) => i.quantity !== 0).filter((i) => i.quantity).map((item) => item.color).includes(colorSelected);
+
   return (
     <div
       className={styles['view-item']}
@@ -68,7 +70,16 @@ const ViewItem = ({ onModalAction, onCloseModalAction, item }) => {
       <Row>
         <Column>
           <div className={styles['view-item__carousel']}>
-            <Carousel images={item.images.filter((i) => i.color === colorSelected)} />
+            <Carousel
+              images={item.images.filter((i) => i.color === colorSelected)}
+            />
+            {!available && (
+              <div className={styles.box}>
+                <div className={styles.message}>
+                  <Text text="out of stock" transform="uppercase"/>
+                </div>
+              </div>
+            )}
           </div>
         </Column>
         <div className={styles.right}>
@@ -91,7 +102,7 @@ const ViewItem = ({ onModalAction, onCloseModalAction, item }) => {
               sizeSelected={sizeSelected}
               sizes={item.sizes}
               onSizeSelect={handleSizeSelect}
-              availability={item.availability.filter((i) => i.quantity !== 0 && i.color === colorSelected)}
+              availability={available ? item.availability.filter((i) => i.quantity !== 0 && i.color === colorSelected) : []}
               onSizeGuide={handleSizeGuide}
             />
             <QuantitySelector
@@ -99,6 +110,7 @@ const ViewItem = ({ onModalAction, onCloseModalAction, item }) => {
               onQuantityChange={handleQuanityChange}
               onMinus={handleMinusClick}
               onPlus={handlePlusClick}
+              disabled={!available}
             />
             {sizeGuide && (
               <div className={styles.sizes}>
@@ -108,10 +120,11 @@ const ViewItem = ({ onModalAction, onCloseModalAction, item }) => {
             <Button
               padded
               theme="black"
-              onClick={() => onModalAction('add-item', {
+              disabled={!available}
+              onClick={ available ? () => onModalAction('add-item', {
               itemId: item._id,
               selectedOptions,
-            })}
+            }) : null}
             >
               <Text text="Add to bag" transform="uppercase" color="white" />
             </Button>

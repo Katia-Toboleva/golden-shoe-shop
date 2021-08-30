@@ -6,6 +6,27 @@
   transform: translate(-50%, -50%);
   background-color: white;
 
+  &__carousel {
+    position: relative;
+
+    .box {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background-color: rgba(grey, .5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .message {
+        background-color: white;
+        padding: 20px;
+      }
+    }
+  }
+
   &__close-button {
     position: absolute;
     top: 0;

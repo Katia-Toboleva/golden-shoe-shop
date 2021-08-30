@@ -15,6 +15,7 @@ const Button = ({
   round,
   active,
   padded,
+  disabled,
 }) => (
   <>
     <div
@@ -27,6 +28,7 @@ const Button = ({
         active,
         padded,
         hoverOpacity,
+        disabled,
       })}
       onClick={onClick}
     >
