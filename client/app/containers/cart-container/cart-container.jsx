@@ -9,10 +9,6 @@ import * as cartActions from './state/actions';
 const CartContainer = ({ state, actions }) => {
   const { cart } = state;
 
-  // REMOVE THIS LINE WHEN IMPLEMENTING FETCH
-  const itemsInCart = [1, 1, 1, 1, 1, 1, 1];
-  //= ==========================================
-
   useEffect(() => {
     actions.getCart();
   }, []);
@@ -20,8 +16,7 @@ const CartContainer = ({ state, actions }) => {
   return (
     <>
       <DefaultPageWrapper
-        pageActive="women"
-        itemsInCart={itemsInCart}
+        pageActive="cart"
       >
         {/* <Cart /> */}
 

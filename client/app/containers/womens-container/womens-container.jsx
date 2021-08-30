@@ -18,10 +18,6 @@ const WomensContainer = (props) => {
   const [sortFilterSelected, setSortFilterSelected] = useState(undefined);
   const [isModalVisible, setIsModalVisible] = useState(false);
 
-  // REMOVE THIS LINE WHEN IMPLEMENTING FETCH
-  const itemsInCart = [1, 1, 1, 1, 1, 1, 1];
-  //= ==========================================
-
   useEffect(() => {
     props.fetchItems('woman');
   }, []);
@@ -83,7 +79,6 @@ const WomensContainer = (props) => {
       )}
       <DefaultPageWrapper
         pageActive="women"
-        itemsInCart={itemsInCart}
       >
         <Filters
           onFilterClick={handleFilterClick}
