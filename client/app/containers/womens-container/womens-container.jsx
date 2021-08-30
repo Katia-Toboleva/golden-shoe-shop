@@ -61,7 +61,7 @@ const WomensContainer = (props) => {
 
   const handleApplyClick = () => {
     setFiltersApplied(true);
-    //SEND TO API THE FOLLOWING OBJ
+    // TODO SEND TO API THE FOLLOWING OBJ
     const obj = {
       woman: womanFIlterSelected,
       size: sizeFilterSelected,
