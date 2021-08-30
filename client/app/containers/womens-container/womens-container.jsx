@@ -14,9 +14,9 @@ const WomensContainer = (props) => {
   const [womanFilterSelected, setWomanFilterSelected] = useState(undefined);
   const [sizeFilterSelected, setSizeFilterSelected] = useState(undefined);
   const [colorFilterSelected, setColorFilterSelected] = useState(undefined);
-  const [priceFilterSelected, setPriceFilterSelected] = useState(undefined);
   const [sortFilterSelected, setSortFilterSelected] = useState(undefined);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [filtersApplied, setFiltersApplied] = useState(false);
 
   useEffect(() => {
     props.fetchItems('woman');
@@ -38,9 +38,6 @@ const WomensContainer = (props) => {
     }
     if (label === 'colour') {
       setColorFilterSelected(value);
-    }
-    if (label === 'price') {
-      setPriceFilterSelected(value);
     }
     if (label === 'sort') {
       setSortFilterSelected(value);
@@ -94,6 +91,24 @@ const WomensContainer = (props) => {
     }
   };
 
+  const handleApplyClick = () => {
+    setFiltersApplied(true);
+    // TODO SEND TO API THE FOLLOWING OBJ
+    const obj = {
+      woman: womanFIlterSelected,
+      size: sizeFilterSelected,
+      color: colorFilterSelected,
+    };
+    //============================
+  };
+
+  const handleFiltersReset = () => {
+    setFiltersApplied(false);
+    setWomanFilterSelected(undefined);
+    setSizeFilterSelected(undefined);
+    setColorFilterSelected(undefined);
+  };
+
   return (
     <>
       {fetchItemRequestStatus === 'rejected' && <div>Error!</div>}
@@ -115,11 +130,13 @@ const WomensContainer = (props) => {
       >
         <Filters
           onFilterClick={handleFilterClick}
+          onApply={womanFilterSelected || sizeFilterSelected || colorFilterSelected ? handleApplyClick : null}
+          onReset={handleFiltersReset}
           womanFilterSelected={womanFilterSelected}
           sizeFilterSelected={sizeFilterSelected}
           colorFilterSelected={colorFilterSelected}
-          priceFilterSelected={priceFilterSelected}
           sortFilterSelected={sortFilterSelected}
+          filtersApplied={filtersApplied}
         />
         {fetchItemsRequestStatus === 'rejected' && <div>Error!</div>}
         {fetchItemsRequestStatus === 'pending' && <Spinner />}

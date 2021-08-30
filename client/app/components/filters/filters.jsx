@@ -1,6 +1,7 @@
 import React from 'react';
 import Dropdown from '../dropdpwn/dropdown';
 import Text from '../text';
+import Button from '../button';
 import { Row, Column } from '../grid';
 
 import styles from './styles.scss';
@@ -20,11 +21,6 @@ const color = {
   items: ['black', 'blue', 'brown', 'red', 'yellow', 'pink', 'purple'],
 };
 
-const price = {
-  label: 'price',
-  items: [10, 20, 25, 30, 35, 40],
-};
-
 const sort = {
   label: 'sort',
   items: ['Newest', 'Price low-hight', 'Price hight-low', 'Best sellers'],
@@ -32,11 +28,13 @@ const sort = {
 
 const Filters = ({
   onFilterClick,
+  onApply,
+  onReset,
   womanFilterSelected,
   sizeFilterSelected,
   colorFilterSelected,
-  priceFilterSelected,
   sortFilterSelected,
+  filtersApplied,
 }) => (
   <div className={styles.filters}>
     <Row direction="row" justifyContent="space-between">
@@ -68,14 +66,16 @@ const Filters = ({
                 filterSelected={colorFilterSelected}
               />
             </Column>
-            <Column>
-              <Dropdown
-                label={price.label}
-                onFilterClick={onFilterClick}
-                items={price.items}
-                filterSelected={priceFilterSelected}
-              />
-            </Column>
+            {!filtersApplied && (
+              <Button round={false} theme="black" onClick={onApply} padded>
+                <Text text="apply" transform="uppercase" color="white" />
+              </Button>
+            )}
+            {filtersApplied && (
+              <Button onClick={onReset} padded border="grey">
+                <Text text="X" color="grey" />
+              </Button>
+            )}
           </Row>
         </div>
       </Column>
