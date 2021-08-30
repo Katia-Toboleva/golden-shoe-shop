@@ -27,3 +27,4 @@ export { default as Carousel } from './carousel';
 export { default as ColorSelector } from './modal/panels/view-item/colorSelector';
 export { default as SizeSelector } from './modal/panels/view-item/sizeSelector';
 export { default as QuantitySelector } from './modal/panels/view-item/quantitySelector';
+export { default as Cart } from './cart';

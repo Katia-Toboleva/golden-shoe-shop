@@ -1,6 +1,7 @@
 import Home from './home';
 import Womens from './womens';
 import Item from './item';
+import Cart from './cart';
 
 const routes = [
   {
@@ -18,9 +19,9 @@ const routes = [
     },
   },
   {
-    component: Item,
+    component: Cart,
     props: {
-      path: '/item/:id',
+      path: '/cart',
       exact: true,
     },
   },
