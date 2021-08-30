@@ -14,10 +14,19 @@ const DefaultPageWrapper = withRouter(({
 }) => {
   const [pageActive, setPageActive] = useState('home');
   const [cartItemsCount, setCartItemsCount] = useState(0);
-  const cart =  JSON.parse(localStorage.getItem('cart')) || [];
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
   useEffect(() => {
-    setCartItemsCount(cart.length);
+    let count;
+    if (cart.length) {
+      count = cart.reduce(
+        (acc, currentItem) => acc + currentItem.selectedOptions.quantity, 0,
+      );
+    } else {
+      count = 0;
+    }
+
+    setCartItemsCount(count);
   }, [cart, cartItemsCount]);
 
   const handleCartClick = () => {

@@ -57,7 +57,39 @@ const WomensContainer = (props) => {
     }
     if (action === 'add-item') {
       const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-      localStorage.setItem('cart', JSON.stringify([...cartItems, selectedItem]));
+
+      let itemsArr;
+
+      if (cartItems.length) {
+        const sameItemIndex = cartItems.findIndex(cartItem => (
+          selectedItem.itemId === cartItem.itemId
+          && selectedItem.selectedOptions.color === cartItem.selectedOptions.color
+          && selectedItem.selectedOptions.size === cartItem.selectedOptions.size));
+
+        if (sameItemIndex !== -1) {
+          const sameItemObj = cartItems[sameItemIndex];
+          const remainingArr = [
+            ...cartItems.slice(0, sameItemIndex), ...cartItems.slice(sameItemIndex + 1),
+          ];
+
+          const newObj = {
+            ...sameItemObj,
+            selectedOptions: {
+              ...sameItemObj.selectedOptions,
+              quantity:
+              sameItemObj.selectedOptions.quantity + selectedItem.selectedOptions.quantity,
+            },
+          };
+
+          itemsArr = [...remainingArr, newObj];
+        } else {
+          itemsArr = [...cartItems, selectedItem];
+        }
+      } else {
+        itemsArr = [...cartItems, selectedItem];
+      }
+
+      localStorage.setItem('cart', JSON.stringify(itemsArr));
       setIsModalVisible(false);
     }
   };

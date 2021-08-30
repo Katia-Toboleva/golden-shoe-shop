@@ -8,8 +8,8 @@ const ViewItem = ({ onModalAction, onCloseModalAction, item }) => {
   // TODO add default values to selectedOptions
   const [selectedOptions, setSelectedOptions] = useState({
     color: item.colors[0],
-    size: '',
-    quantity: '',
+    size: 6,
+    quantity: 1,
   });
 
   // TODO check availability of options for each type of selectedOptions and disable unavailable
