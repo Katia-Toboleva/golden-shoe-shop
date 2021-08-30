@@ -20,7 +20,7 @@ const DefaultPageWrapper = withRouter(({
     let count;
     if (cart.length) {
       count = cart.reduce(
-        (acc, currentItem) => acc + currentItem.selectedOptions.quantity, 0,
+        (acc, currentItem) => acc + Number(currentItem.selectedOptions.quantity), 0,
       );
     } else {
       count = 0;
