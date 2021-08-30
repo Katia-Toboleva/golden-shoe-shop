@@ -1,7 +1,7 @@
 import Home from './home';
 import Womens from './womens';
-import Item from './item';
 import Cart from './cart';
+import Faq from './faq';
 
 const routes = [
   {
@@ -22,6 +22,13 @@ const routes = [
     component: Cart,
     props: {
       path: '/cart',
+      exact: true,
+    },
+  },
+  {
+    component: Faq,
+    props: {
+      path: '/faq',
       exact: true,
     },
   },
