@@ -39,9 +39,9 @@ const ViewItem = ({ onModalAction, onCloseModalAction, item }) => {
 
   const handleQuanityChange = (e) => {
     const itemSelected = item.availability.filter((i) => i.color === colorSelected && i.size === sizeSelected)[0];
-    const value = e.target.value;
+    const value = Number(e.target.value);
 
-    if (value <= itemSelected.quantity) {
+    if (value <= Number(itemSelected.quantity)) {
       setQuantity(value);
     }
   };
