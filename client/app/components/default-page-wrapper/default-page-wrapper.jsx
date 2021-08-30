@@ -52,6 +52,12 @@ const DefaultPageWrapper = withRouter(({
     history.push('/womens');
   };
 
+  const handleFooterClick = (link) => {
+    if (link === 'FAQs') {
+      history.push('/faq');
+    }
+  };
+
   return (
     <Container>
       <Header
@@ -65,7 +71,7 @@ const DefaultPageWrapper = withRouter(({
       <div>
         <div>{children}</div>
       </div>
-      <Footer />
+      <Footer onFooterClick={handleFooterClick}/>
     </Container>
   );
 });

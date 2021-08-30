@@ -2,15 +2,15 @@ import React from 'react';
 import {
   Container,
   DefaultPageWrapper,
-  Faq,
+  Questions,
 } from '@components';
 
-const Faqs = () => (
+const Faq = () => (
   <Container>
     <DefaultPageWrapper>
-      <Faq />
+      <Questions />
     </DefaultPageWrapper>
   </Container>
 );
 
-export default Faqs;
+export default Faq;
