@@ -55,13 +55,13 @@ const WomensContainer = (props) => {
     props.fetchItem(id);
   };
 
-  const handleModalAction = (action) => {
+  const handleModalAction = (action, selectedItem) => {
     if (action === 'close') {
       setIsModalVisible(false);
     }
-    if (action === 'addItem') {
-      // TODO implement addItem to cart
-      console.log('ADD');
+    if (action === 'add-item') {
+      const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+      localStorage.setItem('cart', JSON.stringify([...cartItems, selectedItem]));
     }
   };
 

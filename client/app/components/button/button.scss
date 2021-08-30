@@ -2,6 +2,9 @@
 
 .button {
   cursor: pointer;
+  display: flex;
+  flex-direction: columnn;
+  justify-content: center;
 
   &.round {
     border-radius: 50%;
@@ -21,6 +24,10 @@
 
   &--size-x-large {
     width: 4rem;
+  }
+
+  &--theme-black {
+    background-color: black;
   }
 
   &.padded {

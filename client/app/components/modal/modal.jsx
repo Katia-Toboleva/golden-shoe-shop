@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames/bind';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { Button, Icon } from '@components';
 
 import styles from './modal.scss';
 
@@ -26,8 +24,8 @@ const Modal = ({
     setState({ isVisible: visible });
   }, [visible]);
 
-  const handleAction = (action) => {
-    onAction(action);
+  const handleAction = (action, item) => {
+    onAction(action, item);
   };
 
   const { isVisible } = state;
@@ -46,16 +44,19 @@ const Modal = ({
               [`modal--theme-${theme}`]: theme,
               [`modal--size-${size}`]: size,
             })}
+            onClick={() => handleAction('close')}
           >
             {Panel
-              ? <Panel {...panel.props} onAction={handleAction} />
+              ? (
+                <Panel
+                  item={panel.props}
+                  onModalAction={handleAction}
+                  onCloseModalAction={handleAction}
+                />
+              )
               : React.cloneElement(children, {
                 onAction: handleAction,
               })}
-
-            <Button onClick={() => handleAction('close')}>
-              <Icon icon="close" theme="grey" size="medium" />
-            </Button>
           </div>
         </motion.div>
       )}
@@ -70,7 +71,7 @@ Modal.defaultProps = {
     type: '',
     props: {},
   },
-  onAction: () => {},
+  onAction: () => { },
 };
 
 export default Modal;

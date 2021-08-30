@@ -11,7 +11,7 @@ const Button = ({
   children,
   hoverable = false,
   hoverOpacity = false,
-  round = true,
+  round,
   active,
   padded,
 }) => (
