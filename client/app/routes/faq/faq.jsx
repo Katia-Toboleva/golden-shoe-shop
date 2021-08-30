@@ -1,12 +1,16 @@
 import React from 'react';
+import {
+  Container,
+  DefaultPageWrapper,
+  Faq,
+} from '@components';
 
-import { Container } from '@components';
-// import { Faq } from '@components';
-
-const Item = () => (
+const Faqs = () => (
   <Container>
-    {/* <Faq /> */}
+    <DefaultPageWrapper>
+      <Faq />
+    </DefaultPageWrapper>
   </Container>
 );
 
-export default Item;
+export default Faqs;
