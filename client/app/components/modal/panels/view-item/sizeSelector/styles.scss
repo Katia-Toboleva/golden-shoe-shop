@@ -1,0 +1,33 @@
+.container {
+  margin-bottom: 10px;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+  }
+
+
+  .selector {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90px;
+
+    .size {
+      padding: 5px 10px;
+
+      &.active {
+        border: 1px solid black;
+      }
+
+      &.unAvailable {
+        opacity: .5;
+      }
+
+      &.pointer {
+        cursor: pointer;
+      }
+    }
+  }
+}

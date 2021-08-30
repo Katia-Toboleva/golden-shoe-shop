@@ -15,12 +15,14 @@ const Icon = ({
   round,
   theme,
   items,
+  rotate,
 }) => (
   <div
     className={cx('icon', {
       [`icon--size-${size}`]: size,
       'icon--round': round,
       [`icon--theme-${theme}`]: theme,
+      [`icon--rotate-${rotate}`]: rotate,
     })}
   >
     <i dangerouslySetInnerHTML={{ __html: glyphs[icon] }} />

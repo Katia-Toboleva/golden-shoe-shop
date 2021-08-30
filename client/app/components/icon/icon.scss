@@ -126,6 +126,14 @@
     padding: 10px;
   }
 
+  &--rotate-left {
+    transform: rotate(90deg);
+  }
+
+  &--rotate-right {
+    transform: rotate(-90deg);
+  }
+
   .count {
     border-radius: 50%;
     background-color: white;

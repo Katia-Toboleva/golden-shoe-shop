@@ -1,18 +1,50 @@
 import React, { useState } from 'react';
-import { Button, Icon, Text, Row, Column } from '@components';
+import { Button,
+  Icon,
+  Text,
+  Row,
+  Column,
+  Carousel,
+  ColorSelector,
+  SizeSelector,
+  Image,
+  QuantitySelector,
+} from '@components';
 
 import styles from './view-item.scss';
 
 const ViewItem = ({ onModalAction, onCloseModalAction, item }) => {
-  // TODO add logic for updating selectedOptions with filters (color, size, quantity).
-  // TODO add default values to selectedOptions
-  const [selectedOptions, setSelectedOptions] = useState({
-    color: item.colors[0],
-    size: 6,
-    quantity: 1,
-  });
+  const [colorSelected, setColorSelected] = useState(item.colors[0]);
+  const [sizeSelected, setSizeSelected] = useState(item.sizes[0]);
+  const [sizeGuide, setSizeGuide] = useState(false);
+  const [quantity, setQuantity] = useState(1);
 
-  // TODO check availability of options for each type of selectedOptions and disable unavailable
+  const selectedOptions = {
+    color: colorSelected,
+    size: sizeSelected,
+    quantity,
+  };
+
+  const onColorSelect = (color) => {
+    setColorSelected(color);
+  };
+
+  const handleSizeSelect = (size) => {
+    setSizeSelected(size);
+  };
+
+  const handleSizeGuide = () => {
+    setSizeGuide(!sizeGuide);
+  };
+
+  const handleQuanityChange = (e) => {
+    const itemSelected = item.availability.filter((i) => i.color === colorSelected && i.size === sizeSelected)[0];
+    const value = e.target.value;
+
+    if (value <= itemSelected.quantity) {
+      setQuantity(value);
+    }
+  };
 
   return (
     <div
@@ -22,32 +54,54 @@ const ViewItem = ({ onModalAction, onCloseModalAction, item }) => {
       <Row>
         <Column>
           <div className={styles['view-item__carousel']}>
-            carousel here
+            <Carousel images={item.images.filter((i) => i.color === colorSelected)} />
           </div>
         </Column>
-
-        <Column>
-          <Row>
-            <Column>
-              <Text text={item.name} transform="uppercase" display="block" />
-              <Text text={item.description} display="block" />
-            </Column>
-            <Column>
-              <Text text={item.price} display="block" />
-            </Column>
-          </Row>
-          <Button padded theme="black" onClick={() => onModalAction('add-item', {
-            itemId: item._id,
-            selectedOptions,
-          })}
-          >
-            <Text text="Add to bag" transform="uppercase" color="white" />
-          </Button>
-        </Column>
+        <div className={styles.right}>
+          <Column>
+            <Row justifyContent="space-between">
+              <Column>
+                <Text text={item.name} transform="uppercase" display="block" />
+                <Text text={item.description} display="block" />
+              </Column>
+              <Column>
+                <Text text={`£${item.price}`} display="block" weight="bold" />
+              </Column>
+            </Row>
+            <ColorSelector
+              colors={item.colors}
+              onColorSelect={onColorSelect}
+              colorSelected={colorSelected}
+            />
+            <SizeSelector
+              sizeSelected={sizeSelected}
+              sizes={item.sizes}
+              onSizeSelect={handleSizeSelect}
+              availability={item.availability.filter((i) => i.quantity !== 0 && i.color === colorSelected)}
+              onSizeGuide={handleSizeGuide}
+            />
+            <QuantitySelector quantity={quantity} onQuantityChange={handleQuanityChange} />
+            {sizeGuide && (
+              <div className={styles.sizes}>
+                <Image src="https://i.ytimg.com/vi/n4-Q24a3DEM/maxresdefault.jpg"/>
+              </div>
+            )}
+            <Button
+              padded
+              theme="black"
+              onClick={() => onModalAction('add-item', {
+              itemId: item._id,
+              selectedOptions,
+            })}
+            >
+              <Text text="Add to bag" transform="uppercase" color="white" />
+            </Button>
+          </Column>
+        </div>
       </Row>
-      
+
       <div className={styles['view-item__close-button']}>
-        <Button onClick={() => onCloseModalAction('close')}>
+        <Button onClick={sizeGuide ? handleSizeGuide : () => onCloseModalAction('close')}>
           <Icon icon="close" theme="grey" size="x-large" />
         </Button>
       </div>

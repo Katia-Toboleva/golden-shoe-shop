@@ -23,3 +23,7 @@ export { default as Filters } from './filters';
 export { default as SubMenu } from './subMenu';
 export { default as Items } from './items';
 export { default as Item } from './item';
+export { default as Carousel } from './carousel';
+export { default as ColorSelector } from './modal/panels/view-item/colorSelector';
+export { default as SizeSelector } from './modal/panels/view-item/sizeSelector';
+export { default as QuantitySelector } from './modal/panels/view-item/quantitySelector';
