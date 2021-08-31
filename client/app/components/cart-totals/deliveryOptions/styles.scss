@@ -1,0 +1,45 @@
+.dropDown {
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 240px;
+    cursor: pointer;
+  }
+
+  .menu {
+    padding: 5px;
+    width: 240px;
+
+    .option {
+      display: flex;
+      align-items: center;
+      padding: 3px;
+      margin-bottom: 2px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba(black, .1);
+      }
+
+      .cost {
+        margin-left: 10px;
+      }
+
+      .checkBox {
+        width: 15px;
+        height: 15px;
+        border: 1px solid rgba(black, .2);
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &.active {
+          background-color: black;
+          border: 1px solid black;
+        }
+      }
+    }
+  }
+}

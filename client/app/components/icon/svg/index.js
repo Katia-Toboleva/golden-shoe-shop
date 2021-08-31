@@ -7,3 +7,4 @@ export { default as tweeter } from './tweeter.svg';
 export { default as chevron } from './chevron.svg';
 export { default as close } from './close.svg';
 export { default as chat } from './chat.svg';
+export { default as checkMark } from './checkMark.svg';
