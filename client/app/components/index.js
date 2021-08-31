@@ -30,3 +30,4 @@ export { default as QuantitySelector } from './modal/panels/view-item/quantitySe
 export { default as Cart } from './cart';
 export { default as Questions } from './questions';
 export { default as Chat } from './chat';
+export { default as CartItem } from './cart-item';

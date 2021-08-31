@@ -16,17 +16,19 @@ const ColorSelector = ({
         <Text text="Color" weight="bold"/>
         <Text text={colorSelected}/>
       </div>
-      <div className={styles.selector}>
-        {colors.map((c) => (
-          <div
-            className={cx('color', {
-              'active': colorSelected === c,
-              [`color--${c}`]: c,
-            })}
-            onClick={() => onColorSelect(c)}
-          />
-        ))}
-      </div>
+      {colors && colors.length && (
+        <div className={styles.selector}>
+          {colors.map((c) => (
+            <div
+              className={cx('color', {
+                'active': colorSelected === c,
+                [`color--${c}`]: c,
+              })}
+              onClick={() => onColorSelect(c)}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
