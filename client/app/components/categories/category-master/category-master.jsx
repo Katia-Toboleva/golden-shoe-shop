@@ -1,8 +1,6 @@
 import React from 'react';
-import classnames from 'classnames/bind';
+import { Button, Text } from '@components';
 import styles from '../categories.scss';
-
-const cx = classnames.bind(styles);
 
 const getInlineStyles = (url) => ({
   background: `url(${url}) center/cover no-repeat`,
@@ -12,13 +10,28 @@ const getInlineStyles = (url) => ({
 
 const CategoryMaster = ({
   index,
-  category,
   url,
   onClick,
 }) => (
-  <>
+  <div className={styles.container}>
     <div className={styles[`category category__${index}`]} style={getInlineStyles(url)} />
-  </>
+    <div className={styles.button}>
+      <Button
+        onClick={onClick}
+        theme="white"
+        padded
+        round={false}
+        size="enormous"
+      >
+        <div className={styles.item}>
+          <div className={styles.title}>
+            <Text text="new arrivals" transform="uppercase" />
+          </div>
+          <Text text="shop now" weight="bold" transform="uppercase" />
+        </div>
+      </Button>
+    </div>
+  </div>
 );
 
 export default CategoryMaster;

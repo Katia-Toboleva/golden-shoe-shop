@@ -19,7 +19,7 @@ const Chat = withRouter(({ active, history }) => {
       <Button
         onClick={() => setOpenChat(!openChat)}
         round
-        theme="orange"
+        theme="blue"
       >
         <Icon icon="chat" theme="white" size="large" />
       </Button>

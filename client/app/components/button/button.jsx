@@ -16,6 +16,7 @@ const Button = ({
   active,
   padded,
   disabled,
+  justifyContent,
 }) => (
   <>
     <div
@@ -23,6 +24,7 @@ const Button = ({
         [`button--size-${size}`]: size,
         [`button--theme-${theme}`]: theme,
         [`button--border-${border}`]: border,
+        [`button--justify-content-${justifyContent}`]: justifyContent,
         'hoverable': hoverable && !active,
         round,
         active,

@@ -1,17 +1,16 @@
 import React from 'react';
-import classnames from 'classnames/bind';
 import { Text, Row, Column } from '@components';
 
 import styles from './item.scss';
-
-const cx = classnames.bind(styles);
 
 const getInlineStyles = (url) => ({
   background: `url(${url}) center/contain no-repeat`,
 });
 
-const Item = ({ item, onItemClick }) => (
-  <div className={styles['item']} onClick={() => onItemClick(item._id)}>
+const Item = ({ item, onItemClick, disabled }) => (
+  <div className={styles.item}
+    onClick={!disabled ? () => onItemClick(item._id) : null}
+  >
     <div className={styles['item__image']} style={getInlineStyles(item.images[0].urls[0])} />
     <Row direction="column" center>
       <Column>
@@ -21,6 +20,13 @@ const Item = ({ item, onItemClick }) => (
         <Text text={`£ ${item.price}`} />
       </Column>
     </Row>
+    {disabled && (
+      <div className={styles.disabled}>
+        <div className={styles.message}>
+          <Text text="out of stock" size="small" transform="uppercase"/>
+        </div>
+      </div>
+    )}
   </div>
 );
 

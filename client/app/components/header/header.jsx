@@ -24,7 +24,7 @@ const Header = ({
         </Column>
         <Column>
           <Button onClick={onHomeClick}>
-            <Logo size="small"/>
+            <Logo size="big"/>
           </Button>
         </Column>
         <div className={styles.actions}>

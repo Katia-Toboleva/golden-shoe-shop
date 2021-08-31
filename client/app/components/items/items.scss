@@ -13,7 +13,7 @@
 }
 
 @include viewport($size: tablet) {
-  .items {  
+  .items {
     >:not(:last-child) {
       margin-right: 1em;
     }
@@ -21,7 +21,7 @@
 }
 
 @include viewport($size: desktop) {
-  .items {  
+  .items {
     > * {
       margin-left: 2em;
     }

@@ -48,17 +48,20 @@ const Footer = ({onFooterClick}) => {
               weight="bold"
               size="semismall"
             />
-            {item.links.map((link) => (
-              <Column key={link}>
-                <Button
-                  round={false}
-                  onClick={() => onFooterClick(link)}
-                  hoverOpacity
-                >
-                  <Text text={link} size="xsmall"/>
-                </Button>
-              </Column>
-            ))}
+            <div className={styles.links}>
+              {item.links.map((link) => (
+                <Column key={link}>
+                  <Button
+                    round={false}
+                    onClick={() => onFooterClick(link)}
+                    hoverOpacity
+                    justifyContent="start"
+                  >
+                    <Text text={link} size="small"/>
+                  </Button>
+                </Column>
+              ))}
+            </div>
           </Column>
         ))}
       </Row>

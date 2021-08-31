@@ -14,6 +14,10 @@
     justify-content: center;
   }
 
+  &--justify-content-start {
+    justify-content: flex-start;
+  }
+
   &.disabled {
     opacity: .5;
     cursor: default;
@@ -35,12 +39,25 @@
     width: 4rem;
   }
 
+  &--size-enormous {
+    width: 18.75rem;
+    height: 6.25rem
+  }
+
   &--theme-black {
     background-color: black;
   }
 
+  &--theme-white {
+    background-color: rgba(white, .8);
+  }
+
   &--theme-orange {
     background-color: rgb(255, 112, 17);
+  }
+
+  &--theme-blue {
+    background-color: rgb(53, 89, 248);
   }
 
   &--border-black {
