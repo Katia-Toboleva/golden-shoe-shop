@@ -11,7 +11,7 @@ import { fetchItems } from '../items-container/state/actions';
 const WomensContainer = (props) => {
   const { fetchItemRequestStatus, item } = props.item;
   const { fetchItemsRequestStatus, items } = props.items;
-  const [womanFilterSelected, setWomanFilterSelected] = useState(undefined);
+  const [typeFilterSelected, setTypeFilterSelected] = useState(undefined);
   const [sizeFilterSelected, setSizeFilterSelected] = useState(undefined);
   const [colorFilterSelected, setColorFilterSelected] = useState(undefined);
   const [sortFilterSelected, setSortFilterSelected] = useState(undefined);
@@ -19,7 +19,9 @@ const WomensContainer = (props) => {
   const [filtersApplied, setFiltersApplied] = useState(false);
 
   useEffect(() => {
-    props.fetchItems('woman');
+    props.fetchItems({
+      category: 'womens',
+    });
   }, []);
 
   useEffect(() => {
@@ -29,8 +31,8 @@ const WomensContainer = (props) => {
   }, [fetchItemRequestStatus]);
 
   const handleFilterClick = (value, label) => {
-    if (label === 'women') {
-      setWomanFilterSelected(value);
+    if (label === 'type') {
+      setTypeFilterSelected(value);
     }
     if (label === 'size') {
       setSizeFilterSelected(value);
@@ -92,20 +94,23 @@ const WomensContainer = (props) => {
 
   const handleApplyClick = () => {
     setFiltersApplied(true);
-    // TODO SEND TO API THE FOLLOWING OBJ
-    const obj = {
-      woman: womanFIlterSelected,
+    props.fetchItems({
+      category: 'womens',
+      type: typeFilterSelected,
       size: sizeFilterSelected,
       color: colorFilterSelected,
-    };
-    //============================
+    });
   };
 
   const handleFiltersReset = () => {
     setFiltersApplied(false);
-    setWomanFilterSelected(undefined);
+    setTypeFilterSelected(undefined);
     setSizeFilterSelected(undefined);
     setColorFilterSelected(undefined);
+
+    props.fetchItems({
+      category: 'womens',
+    });
   };
 
 
@@ -116,9 +121,9 @@ const WomensContainer = (props) => {
       >
         <Filters
           onFilterClick={handleFilterClick}
-          onApply={womanFilterSelected || sizeFilterSelected || colorFilterSelected ? handleApplyClick : null}
+          onApply={typeFilterSelected || sizeFilterSelected || colorFilterSelected ? handleApplyClick : null}
           onReset={handleFiltersReset}
-          womanFilterSelected={womanFilterSelected}
+          typeFilterSelected={typeFilterSelected}
           sizeFilterSelected={sizeFilterSelected}
           colorFilterSelected={colorFilterSelected}
           sortFilterSelected={sortFilterSelected}

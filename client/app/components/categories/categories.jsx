@@ -11,15 +11,15 @@ const Categories = ({
   categories,
   onClick,
 }) => {
-  const masterCat = categories.find(category => category.type === 'master');
-  const otherCat = categories.filter(category => category.type !== 'master');
+  const masterCat = categories.find(c => c.category === 'master');
+  const otherCat = categories.filter(c => c.category !== 'master');
 
   return (
     <div className={styles['categories']}>
       <div className={styles['categories__item__0']}>
         <CategoryMaster
           index={0}
-          category={masterCat.type}
+          category={masterCat.category}
           url={masterCat.url}
           onClick={onClick}
         />
@@ -28,7 +28,7 @@ const Categories = ({
         <div className={styles[`categories__item__${index + 1}`]}>
           <Category
             index={index + 1}
-            category={category.type}
+            category={category.category}
             url={category.url}
             onClick={onClick}
           />

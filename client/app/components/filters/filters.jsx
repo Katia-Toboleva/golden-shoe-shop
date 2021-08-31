@@ -1,14 +1,15 @@
 import React from 'react';
-import Dropdown from '../dropdpwn/dropdown';
-import Text from '../text';
-import Button from '../button';
-import { Row, Column } from '../grid';
+import {
+  Row, Column, Icon, Button, Text,
+} from '@components';
+
+import Dropdown from '../dropdown/dropdown';
 
 import styles from './styles.scss';
 
-const woman = {
-  label: 'women',
-  items: ['boots', 'heels', 'trainers', 'flats'],
+const type = {
+  label: 'type',
+  items: ['heels', 'trainers', 'flats', 'loafers'],
 };
 
 const size = {
@@ -30,7 +31,7 @@ const Filters = ({
   onFilterClick,
   onApply,
   onReset,
-  womanFilterSelected,
+  typeFilterSelected,
   sizeFilterSelected,
   colorFilterSelected,
   sortFilterSelected,
@@ -44,10 +45,10 @@ const Filters = ({
           <Row direction="row" alignItems="center" justifyContent="space-between">
             <Column>
               <Dropdown
-                label={woman.label}
+                label={type.label}
                 onFilterClick={onFilterClick}
-                items={woman.items}
-                filterSelected={womanFilterSelected}
+                items={type.items}
+                filterSelected={typeFilterSelected}
               />
             </Column>
             <Column>
@@ -66,16 +67,17 @@ const Filters = ({
                 filterSelected={colorFilterSelected}
               />
             </Column>
-            {!filtersApplied && (
-              <Button round={false} theme="black" onClick={onApply} padded>
-                <Text text="apply" transform="uppercase" color="white" />
+
+            <Button round={false} theme="black" onClick={onApply} padded>
+              <Text text="apply" transform="uppercase" color="white" />
+            </Button>
+
+            {/* {filtersApplied && ( */}
+              <Button onClick={onReset}>
+                {/* <Text text="X" color="grey" /> */}
+                <Icon icon="close" theme="black" size="medium" round />
               </Button>
-            )}
-            {filtersApplied && (
-              <Button onClick={onReset} padded border="grey">
-                <Text text="X" color="grey" />
-              </Button>
-            )}
+            {/* )} */}
           </Row>
         </div>
       </Column>

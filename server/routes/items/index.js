@@ -15,11 +15,15 @@ const getById = (req, res) => async ({ db }) => {
 
 const get = (req, res) => async ({ db }) => {
   const {
-    type, size, color, name, minprice, maxprice, price,
+    category, type, size, color, name, minprice, maxprice, price,
   } = req.query;
 
   const queryParams = {};
   const options = {};
+
+  if (category) {
+    queryParams.category = category;
+  }
 
   if (type) {
     queryParams.type = type;

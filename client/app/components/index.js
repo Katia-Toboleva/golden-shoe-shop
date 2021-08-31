@@ -18,7 +18,7 @@ export { default as Footer } from './footer';
 export { default as Email } from './footer/contact/email';
 export { default as Contact } from './footer/contact';
 export { default as Social } from './footer/contact/social';
-export { default as Dropdown } from './dropdpwn';
+export { default as Dropdown } from './dropdown';
 export { default as Filters } from './filters';
 export { default as SubMenu } from './subMenu';
 export { default as Items } from './items';

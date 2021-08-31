@@ -6,9 +6,12 @@
   left: 0;
   height: 120px;
   width: 100%;
+  min-width: max-content;
   display: block;
   overflow-y: scroll;
   animation: drop .35s ease-in;
+  z-index: 50;
+  overflow: auto;
 
   @keyframes drop {
     from {
