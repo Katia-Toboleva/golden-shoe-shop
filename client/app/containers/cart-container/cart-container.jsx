@@ -11,6 +11,8 @@ import {
 import * as itemActions from '../item-container/state/actions';
 import { fetchItem } from '../item-container/state/api';
 
+const calculateSubtotal = (arr) => arr.reduce((acc, currentVal) => acc + (currentVal.price * currentVal.selectedOptions.quantity), 0);
+
 const CartContainer = ({ actions, state }) => {
   const [checkedItems, setCheckedItems] = useState([]);
   const [fetchItemsRequestStatus, setFetchItemsRequest] = useState(null);
@@ -32,7 +34,8 @@ const CartContainer = ({ actions, state }) => {
             const { availability } = latestItemObj;
 
             const itemIndex = availability.findIndex((el) => selectedOptions.color === el.color
-              && selectedOptions.size === el.size && el.quantity > 0);
+              && selectedOptions.size === el.size
+              && selectedOptions.quantity <= el.quantity);
 
             let finalLatestObj;
 
@@ -65,7 +68,6 @@ const CartContainer = ({ actions, state }) => {
     }
   }, []);
 
-  console.log(checkedItems);
   return (
     <>
       <DefaultPageWrapper
@@ -74,11 +76,12 @@ const CartContainer = ({ actions, state }) => {
         {fetchItemsRequestStatus === 'rejected' && <div>Error!</div>}
         {fetchItemsRequestStatus === 'pending' && <Spinner />}
         {fetchItemsRequestStatus === 'success' && (
-        <>
-          <Cart
-            items={checkedItems}
-          />
-        </>
+          <>
+            <Cart
+              items={checkedItems}
+              subtotal={calculateSubtotal(checkedItems)}
+            />
+          </>
         )}
       </DefaultPageWrapper>
     </>

@@ -1,0 +1,7 @@
+@import 'globals.scss';
+
+.cart-totals {
+  >:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}

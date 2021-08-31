@@ -31,3 +31,5 @@ export { default as Cart } from './cart';
 export { default as Questions } from './questions';
 export { default as Chat } from './chat';
 export { default as CartItem } from './cart-item';
+export { default as CartTotals } from './cart-totals';
+export { default as Promo } from './promo';

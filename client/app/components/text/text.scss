@@ -69,6 +69,10 @@
     text-decoration: underline;
   }
 
+  &--decoration-line-through {
+    text-decoration: line-through;
+  }
+
   &--display-block {
     display: block;
   }
@@ -101,18 +105,6 @@
     color: $color-white;
   }
 
-  &--color-imperial-red {
-    color: $color-imperial-red;
-  }
-
-  &--color-space-cadet {
-    color: $color-space-cadet;
-  }
-
-  &--color-amaranth-red {
-    color: $color-amaranth-red;
-  }
-
   &--color-dark-grey {
     color: $color-dark-grey;
   }
@@ -121,15 +113,11 @@
     color: $color-regular-grey;
   }
 
-  &--color-light-grey {
-    color: $color-light-grey;
-  }
-
-  &--color-cyan-process {
-    color: $color-cyan-process;
-  }
-
   &--display-block {
     display: block;
+  }
+
+  &--center {
+    text-align: center;
   }
 }

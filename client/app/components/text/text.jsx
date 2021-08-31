@@ -15,6 +15,7 @@ const Text = ({
   transform,
   decoration,
   display,
+  center,
 }) => {
   const { t } = useTranslation();
 
@@ -27,6 +28,7 @@ const Text = ({
         [`text--transform-${transform}`]: transform,
         [`text--decoration-${decoration}`]: decoration,
         [`text--display-${display}`]: display,
+        'text--center': center,
       })}
     >
       {t(text)}

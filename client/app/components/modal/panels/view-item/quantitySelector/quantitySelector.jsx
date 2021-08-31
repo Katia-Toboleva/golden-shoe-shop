@@ -19,15 +19,19 @@ const QuantitySelector = ({
       disabled,
     })}>
       <Text text="Quantity" weight="bold"/>
-      <div className={styles.buttons}>
-        <Button onClick={onMinus}>
-          <Text text="-"/>
-        </Button>
-        <input onChange={onQuantityChange} value={quantity}/>
-        <Button onClick={onPlus}>
-          <Text text="+"/>
-        </Button>
-      </div>
+      {onQuantityChange ? (
+        <div className={styles.buttons}>
+          <Button onClick={onMinus}>
+            <Text text="-"/>
+          </Button>
+          <input onChange={onQuantityChange} value={quantity}/>
+          <Button onClick={onPlus}>
+            <Text text="+"/>
+          </Button>
+        </div>
+      ) : (
+        <Text text={quantity}/>
+      )}
     </div>
   );
 };
