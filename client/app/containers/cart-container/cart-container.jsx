@@ -7,13 +7,12 @@ import { connect } from 'react-redux';
 import {
   DefaultPageWrapper, Spinner, Cart,
 } from '@components';
+import { calculateSubtotal } from '../../utilities/helpers';
 
 import * as itemActions from '../item-container/state/actions';
 import { fetchItem } from '../item-container/state/api';
 
-const calculateSubtotal = (arr) => arr.reduce((acc, currentVal) => acc + (currentVal.price * currentVal.selectedOptions.quantity), 0);
-
-const CartContainer = ({ actions, state }) => {
+const CartContainer = (props) => {
   const [checkedItems, setCheckedItems] = useState([]);
   const [fetchItemsRequestStatus, setFetchItemsRequest] = useState(null);
 
@@ -68,6 +67,10 @@ const CartContainer = ({ actions, state }) => {
     }
   }, []);
 
+  const handleCheckoutButtonClick = () => {
+    // TODO: future implementation of checkout and payment process here
+  };
+
   return (
     <>
       <DefaultPageWrapper
@@ -80,6 +83,7 @@ const CartContainer = ({ actions, state }) => {
             <Cart
               items={checkedItems}
               subtotal={calculateSubtotal(checkedItems)}
+              onCheckoutButtonClick={handleCheckoutButtonClick}
             />
           </>
         )}

@@ -16,7 +16,7 @@ const CartTotals = ({
   discount,
   onApplyPromoClick,
   isDiscountApplied,
-  onCheckoutClick,
+  onCheckoutButtonClick,
 }) => (
   <div className={styles['cart-totals']}>
     <div className={styles['cart-totals__item']}>
@@ -67,7 +67,7 @@ const CartTotals = ({
           </Column>
           <Column>
             <Text
-              text={`£ ${discount}`}
+              text={`£ -${discount}`}
               transform="uppercase"
               size="medium"
             />
@@ -101,8 +101,8 @@ const CartTotals = ({
 
     <Button
       theme="black"
-      onCheckoutClick={onCheckoutClick} // TODO: further implementation for accepting payments here
       padded
+      onCheckoutClick={onCheckoutButtonClick}
     >
       <Text
         color="white"

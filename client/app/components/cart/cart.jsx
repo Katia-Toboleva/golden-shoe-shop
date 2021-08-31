@@ -1,35 +1,31 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
   Row, Column, CartItem, Text, CartTotals,
 } from '@components';
 
+import { findImage, calculateTotal } from '../../utilities/helpers';
+
 import styles from './cart.scss';
 
-const findImage = (color, images) => images.find(el => el.color === color).urls[0];
-
-const calculateSubtotal = (arr) => arr.reduce((acc, currentVal) => acc + (currentVal.price * currentVal.selectedOptions.quantity), 0);
-
-const calculateTotal = (arr, tax) => {
-  const subtotal = calculateSubtotal(arr);
-  return !tax ? subtotal : (subtotal * tax + subtotal);
-};
-
-const Cart = ({ items, subtotal }) => {
+const Cart = ({ items, subtotal, onCheckoutButtonClick }) => {
   const [total, setTotal] = useState('');
   const [discount, setDiscount] = useState();
   const [isDiscountApplied, setIsDiscountApplied] = useState(false);
 
   const handleApplyPromoClick = (code) => {
     const totalAmount = calculateTotal(items);
-    
     if (code.toLowerCase() === '10off') {
       setIsDiscountApplied(true);
       setDiscount(10);
       setTotal(totalAmount - 10);
     }
-  };
 
-  console.log(total, 'total');
+    if (code.toLowerCase() === '20off') {
+      setIsDiscountApplied(true);
+      setDiscount(20);
+      setTotal(totalAmount - 20);
+    }
+  };
 
   return (
     <div className={styles['cart']}>
@@ -61,6 +57,7 @@ const Cart = ({ items, subtotal }) => {
             total={!total ? subtotal : total}
             isDiscountApplied={isDiscountApplied}
             onApplyPromoClick={handleApplyPromoClick}
+            onCheckoutButtonClick={onCheckoutButtonClick}
           />
         </Column>
       </Row>
