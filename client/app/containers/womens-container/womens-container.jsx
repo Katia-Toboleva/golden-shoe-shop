@@ -26,7 +26,6 @@ const WomensContainer = (props) => {
     if (fetchItemRequestStatus === 'success') {
       setIsModalVisible(true);
     }
-    props.fetchItems('woman');
   }, [fetchItemRequestStatus]);
 
   const handleFilterClick = (value, label) => {
@@ -44,7 +43,7 @@ const WomensContainer = (props) => {
     }
   };
 
-  const handleItemClick = (id) => {
+  const handleItemClick = async (id) => {
     props.fetchItem(id);
   };
 
@@ -109,22 +108,9 @@ const WomensContainer = (props) => {
     setColorFilterSelected(undefined);
   };
 
+
   return (
     <>
-      {fetchItemRequestStatus === 'rejected' && <div>Error!</div>}
-      {fetchItemRequestStatus === 'pending' && <Spinner />}
-      {fetchItemRequestStatus === 'success' && (
-        <Modal
-          panel={{
-            type: 'view-item',
-            props: item,
-          }}
-          visible={isModalVisible}
-          theme="view-item"
-          size="full-page"
-          onAction={handleModalAction}
-        />
-      )}
       <DefaultPageWrapper
         pageActive="women"
       >
@@ -147,6 +133,20 @@ const WomensContainer = (props) => {
           />
         )}
       </DefaultPageWrapper>
+      {fetchItemRequestStatus === 'rejected' && <div>Error!</div>}
+      {fetchItemRequestStatus === 'pending' && <Spinner />}
+      {fetchItemRequestStatus === 'success' && item && !!Object.keys(item).length && (
+        <Modal
+          panel={{
+            type: 'view-item',
+            props: item,
+          }}
+          visible={isModalVisible}
+          theme="view-item"
+          size="full-page"
+          onAction={handleModalAction}
+        />
+      )}
     </>
 
   );

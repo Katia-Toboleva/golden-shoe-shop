@@ -1,30 +1,40 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Row, Column, CartItem, Text, CartTotals,
 } from '@components';
 
-import { findImage, calculateTotal } from '../../utilities/helpers';
+import { findImage } from '../../utilities/helpers';
 
 import styles from './cart.scss';
 
 const Cart = ({ items, subtotal, onCheckoutButtonClick }) => {
-  const [total, setTotal] = useState('');
+  const [total, setTotal] = useState(subtotal);
   const [discount, setDiscount] = useState();
   const [isDiscountApplied, setIsDiscountApplied] = useState(false);
+  const [optionSelected, setOptionSelected] = useState();
 
   const handleApplyPromoClick = (code) => {
-    const totalAmount = calculateTotal(items);
-    if (code.toLowerCase() === '10off') {
+    if (code.toLowerCase() === '10off' && !isDiscountApplied) {
+      const newTotal = total - 10;
       setIsDiscountApplied(true);
       setDiscount(10);
-      setTotal(totalAmount - 10);
+      setTotal(newTotal);
     }
 
-    if (code.toLowerCase() === '20off') {
+    if (code.toLowerCase() === '20off' && !isDiscountApplied) {
+      const newTotal = total - 20;
       setIsDiscountApplied(true);
       setDiscount(20);
-      setTotal(totalAmount - 20);
+      setTotal(newTotal);
     }
+  };
+
+  const handleOptionClick = (option) => {
+    setIsDiscountApplied(false);
+    setDiscount(0);
+    const newTotal = Number(subtotal) + Number(option);
+    setOptionSelected(option);
+    setTotal(newTotal);
   };
 
   return (
@@ -54,8 +64,10 @@ const Cart = ({ items, subtotal, onCheckoutButtonClick }) => {
             subtotal={subtotal}
             tax={0}
             discount={discount}
-            total={!total ? subtotal : total}
+            total={total}
             isDiscountApplied={isDiscountApplied}
+            onOption={handleOptionClick}
+            optionSelected={optionSelected}
             onApplyPromoClick={handleApplyPromoClick}
             onCheckoutButtonClick={onCheckoutButtonClick}
           />

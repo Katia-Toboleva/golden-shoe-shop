@@ -14,7 +14,7 @@ import { fetchItem } from '../item-container/state/api';
 
 const CartContainer = (props) => {
   const [checkedItems, setCheckedItems] = useState([]);
-  const [fetchItemsRequestStatus, setFetchItemsRequest] = useState(null);
+  const [fetchItemsRequestStatus, setFetchItemsRequest] = useState(true);
 
   useEffect(() => {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -70,6 +70,7 @@ const CartContainer = (props) => {
   const handleCheckoutButtonClick = () => {
     // TODO: future implementation of checkout and payment process here
   };
+  
 
   return (
     <>
@@ -77,8 +78,8 @@ const CartContainer = (props) => {
         pageActive="cart"
       >
         {fetchItemsRequestStatus === 'rejected' && <div>Error!</div>}
-        {fetchItemsRequestStatus === 'pending' && <Spinner />}
-        {fetchItemsRequestStatus === 'success' && (
+        {(fetchItemsRequestStatus === 'pending' || !checkedItems.length) && <Spinner />}
+        {fetchItemsRequestStatus === 'success' && !!checkedItems.length && (
           <>
             <Cart
               items={checkedItems}

@@ -5,6 +5,7 @@ import {
   Text,
   Promo,
   Button,
+  DeliveryOptions,
 } from '@components';
 
 import styles from './cart-totals.scss';
@@ -17,6 +18,8 @@ const CartTotals = ({
   onApplyPromoClick,
   isDiscountApplied,
   onCheckoutButtonClick,
+  onOption,
+  optionSelected,
 }) => (
   <div className={styles['cart-totals']}>
     <div className={styles['cart-totals__item']}>
@@ -53,6 +56,13 @@ const CartTotals = ({
           />
         </Column>
       </Row>
+    </div>
+    
+    <div className={styles['cart-totals__item']}>
+      <DeliveryOptions
+        onOption={onOption}
+        optionSelected={optionSelected}
+      />
     </div>
     {isDiscountApplied && (
       <div className={styles['cart-totals__item']}>

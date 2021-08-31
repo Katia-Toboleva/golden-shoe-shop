@@ -31,8 +31,12 @@ const DefaultPageWrapper = withRouter(({
   }, [cart, cartItemsCount]);
 
   const handleCartClick = () => {
-    setPageActive('');
-    history.push('/cart');
+    if (!cartItemsCount) {
+      history.push('/');
+    } else {
+      setPageActive('');
+      history.push('/cart');
+    }
   };
 
   const handleHomeClick = () => {

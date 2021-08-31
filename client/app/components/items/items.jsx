@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 import { Item } from '@components';
 import styles from './items.scss';
 
-const Items = ({ items, onItemClick }) => {
-  console.log(items)
-  return (
+const Items = ({ items, onItemClick }) => (
   <div className={styles['items']}>
     {!!items.length && items.map((item) => (
       <Item
@@ -15,8 +13,7 @@ const Items = ({ items, onItemClick }) => {
       />
     ))}
   </div>
-  );
-};
+);
 
 Items.defaultProps = {
   items: [],

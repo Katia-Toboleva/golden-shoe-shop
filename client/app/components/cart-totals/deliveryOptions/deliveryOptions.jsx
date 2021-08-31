@@ -1,22 +1,22 @@
 import React, { useState} from 'react';
-import { Icon, Text } from '@components';
-import styles from './styles.scss';
+import { Icon, Text, Row, Column } from '@components';
 import classnames from 'classnames/bind';
+import styles from './styles.scss';
 
 const cx = classnames.bind(styles);
 
 const options = [
   {
-    label: 'FREE standard delivery',
+    label: 'FREE standard delivery (5 days)',
     cost: 0,
   },
   {
-    label: 'Expres delivery',
+    label: 'Collect from store (3 days)',
     cost: 5.95,
   },
   {
-    label: 'Next day delivery',
-    cost: 6.95,
+    label: 'Express delivery (24 hrs)',
+    cost: 9.95,
   },
 ];
 
@@ -31,7 +31,7 @@ const DeliveryOptions = ({ onOption, optionSelected }) => {
       {open && (
         <div className={styles.menu}>
           {options.map((item) => (
-            <div className={styles.option} onClick={() => onOption(item.cost)}>
+            <div className={styles.option} onClick={() => onOption(Number(item.cost))}>
               <div className={cx('checkBox', {
                 'active' : optionSelected === item.cost,
               })}>
@@ -39,10 +39,16 @@ const DeliveryOptions = ({ onOption, optionSelected }) => {
                   <Icon icon="checkMark" theme="white" />
                 )}
               </div>
-              <Text text={`£${item.cost}`} />
-              <div className={styles.info}>
-                <Text text={item.label} />
-              </div>
+              <Row space="small">
+                <Column grow>
+                  <div className={styles.info}>
+                    <Text text={item.label} />
+                  </div>
+                </Column>
+                <Column shrink>
+                  <Text text={`£ ${item.cost}`} />
+                </Column>
+              </Row>
             </div>
           ))}
         </div>
