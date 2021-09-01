@@ -24,7 +24,7 @@ const WomensContainer = (props) => {
     props.fetchItems({
       category: 'womens',
     });
-    setSortFilterSelected('Relevance');
+    setSortFilterSelected('All');
   }, []);
 
   useEffect(() => {

@@ -24,7 +24,7 @@ const color = {
 
 const sort = {
   label: 'sort',
-  items: ['Relevance', 'Price low-high', 'Price high-low', 'Best sellers'],
+  items: ['All', 'Price low-high', 'Price high-low', 'In stock'],
 };
 
 const Filters = ({

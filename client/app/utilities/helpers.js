@@ -14,13 +14,17 @@ export const calculateTotal = (arr, tax) => {
   return !tax ? subtotal : (subtotal * tax + subtotal);
 };
 
-export const sortItems = (items, sortFilterSelected) => {
-  if (sortFilterSelected === 'Price low-high') {
+export const sortItems = (items, filter) => {
+  if (filter === 'Price low-high') {
     return items.sort((a, b) => (a.price > b.price && 1) || -1);
   }
 
-  if (sortFilterSelected === 'Price high-low') {
+  if (filter === 'Price high-low') {
     return items.sort((a, b) => (a.price < b.price && 1) || -1);
+  }
+
+  if (filter === 'In stock') {
+    return items.filter(item => item.availability.length);
   }
 
   return items;
