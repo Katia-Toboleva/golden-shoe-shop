@@ -2,8 +2,10 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import {
-  DefaultPageWrapper, Items, Spinner, Filters, Modal,
+  DefaultPageWrapper, Items, Spinner, Filters, Modal, Text,
 } from '@components';
+
+import { sortItems } from '../../utilities/helpers';
 
 import { fetchItem } from '../item-container/state/actions';
 import { fetchItems } from '../items-container/state/actions';
@@ -22,6 +24,7 @@ const WomensContainer = (props) => {
     props.fetchItems({
       category: 'womens',
     });
+    setSortFilterSelected('Relevance');
   }, []);
 
   useEffect(() => {
@@ -113,7 +116,6 @@ const WomensContainer = (props) => {
     });
   };
 
-
   return (
     <>
       <DefaultPageWrapper
@@ -131,10 +133,18 @@ const WomensContainer = (props) => {
         />
         {fetchItemsRequestStatus === 'rejected' && <div>Error!</div>}
         {fetchItemsRequestStatus === 'pending' && <Spinner />}
-        {fetchItemsRequestStatus === 'success' && (
+        {fetchItemsRequestStatus === 'success' && items && (
           <Items
-            items={items}
+            items={sortFilterSelected
+              ? sortItems(items, sortFilterSelected)
+              : items}
             onItemClick={handleItemClick}
+          />
+        )}
+        {fetchItemsRequestStatus === 'success' && !items.length && (
+          <Text
+            text="Sorry, no items matching your criteria found, please modify the search criteria."
+            weight="bold"
           />
         )}
       </DefaultPageWrapper>

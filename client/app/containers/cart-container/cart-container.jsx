@@ -70,7 +70,6 @@ const CartContainer = (props) => {
   const handleCheckoutButtonClick = () => {
     // TODO: future implementation of checkout and payment process here
   };
-  
 
   return (
     <>

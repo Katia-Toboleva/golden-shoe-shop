@@ -24,7 +24,7 @@ const color = {
 
 const sort = {
   label: 'sort',
-  items: ['Newest', 'Price low-hight', 'Price hight-low', 'Best sellers'],
+  items: ['Relevance', 'Price low-high', 'Price high-low', 'Best sellers'],
 };
 
 const Filters = ({
@@ -72,17 +72,14 @@ const Filters = ({
               <Text text="apply" transform="uppercase" color="white" />
             </Button>
 
-            {/* {filtersApplied && ( */}
-              <Button onClick={onReset}>
-                {/* <Text text="X" color="grey" /> */}
-                <Icon icon="close" theme="black" size="medium" round />
-              </Button>
-            {/* )} */}
+            <Button onClick={onReset}>
+              <Icon icon="close" theme="black" size="medium" round />
+            </Button>
           </Row>
         </div>
       </Column>
       <Column>
-        <Text text="Sort" weight="bold" size="semismall" />
+        <Text text="Sort by" weight="bold" size="semismall" />
         <div className={styles.box}>
           <Dropdown
             label={sort.label}
