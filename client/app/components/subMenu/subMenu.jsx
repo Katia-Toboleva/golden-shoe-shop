@@ -6,7 +6,7 @@ const SubMenu = ({ onFilterClick, items, label }) => (
   <div className={styles.subMenu}>
     {items.map((i) => (
       <div className={styles.item} onClick={() => onFilterClick(i, label)}>
-        <Text text={i} transform="capitalize" />
+        <Text text={i} transform="capitalize" size="semismall" />
       </div>
     ))}
   </div>

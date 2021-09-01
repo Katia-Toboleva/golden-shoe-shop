@@ -1,3 +1,5 @@
+@import 'globals.scss';
+
 .container {
   display: flex;
   align-items: center;
@@ -8,13 +10,49 @@
     height: 100%;
 
     &--size-small {
-      width: 90px;
-      height: 90px;
+      width: 5rem;
+      height: 5rem;
     }
 
     &--size-big {
-      width: 7.5rem;
-      height: 7.5rem;
+      width: 9rem;
+      height: 9rem;
+    }
+  }
+}
+
+@include viewport($size: tablet) {
+  .container {
+  
+    .logo {
+  
+      &--size-small {
+        width: 9rem;
+        height: 9rem;
+      }
+  
+      &--size-big {
+        width: 12rem;
+        height: 12rem;
+      }
+    }
+  }
+}
+
+@include viewport($size: desktop) {
+  .container {
+  
+    .logo {
+  
+      &--size-small {
+        width: 12rem;
+        height: 12rem;
+      }
+  
+      &--size-big {
+        width: 15rem;
+        height: 15rem;
+      }
     }
   }
 }

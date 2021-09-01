@@ -1,36 +1,36 @@
-@import 'colors.scss';
+@import 'globals.scss';
 
 .text {
   &--size-xsmall {
-    font-size: 8px;
+    font-size: 0.75rem;
   }
 
   &--size-semismall {
-    font-size: 12px;
+    font-size: 0.75rem;
   }
 
   &--size-small {
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   &--size-medium {
-    font-size: 18px;
+    font-size: 1.25rem;
   }
 
   &--size-medium-large {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 
   &--size-large {
-    font-size: 32px;
+    font-size: 2rem;
   }
 
   &--size-xlarge {
-    font-size: 48px;
+    font-size: 3rem;
   }
 
   &--size-xxlarge {
-    font-size: 64px;
+    font-size: 4rem;
   }
 
   &--weight-thin {
@@ -119,5 +119,81 @@
 
   &--center {
     text-align: center;
+  }
+
+  &--right {
+    text-align: right;
+  }
+}
+
+@include viewport($size: tablet) {
+  .text {
+    &--size-xsmall {
+      font-size: 0.85rem;
+    }
+  
+    &--size-semismall {
+      font-size: 1rem;
+    }
+  
+    &--size-small {
+      font-size: 1.25rem;
+    }
+  
+    &--size-medium {
+      font-size: 1.5rem;
+    }
+  
+    &--size-medium-large {
+      font-size: 1.75rem;
+    }
+  
+    &--size-large {
+      font-size: 2.25rem;
+    }
+  
+    &--size-xlarge {
+      font-size: 4rem;
+    }
+  
+    &--size-xxlarge {
+      font-size: 5rem;
+    }
+  }
+}
+
+@include viewport($size: desktop) {
+  .text {
+    &--size-xsmall {
+      font-size: 1.1rem;
+    }
+  
+    &--size-semismall {
+      font-size: 1.25rem;
+    }
+  
+    &--size-small {
+      font-size: 1.5rem;
+    }
+  
+    &--size-medium {
+      font-size: 1.75rem;
+    }
+  
+    &--size-medium-large {
+      font-size: 2rem;
+    }
+  
+    &--size-large {
+      font-size: 2.5rem;
+    }
+  
+    &--size-xlarge {
+      font-size: 3rem;
+    }
+  
+    &--size-xxlarge {
+      font-size: 4rem;
+    }
   }
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Button,
+import {
+  Button,
   Icon,
   Text,
   Row,
@@ -67,7 +68,7 @@ const ViewItem = ({ onModalAction, onCloseModalAction, item }) => {
       className={styles['view-item']}
       onClick={(e) => e.stopPropagation()}
     >
-      <Row>
+      <Row space="medium">
         <Column>
           <div className={styles['view-item__carousel']}>
             <Carousel
@@ -76,17 +77,17 @@ const ViewItem = ({ onModalAction, onCloseModalAction, item }) => {
             {!available && (
               <div className={styles.box}>
                 <div className={styles.message}>
-                  <Text text="out of stock" transform="uppercase"/>
+                  <Text text="out of stock" transform="uppercase" />
                 </div>
               </div>
             )}
           </div>
         </Column>
-        <div className={styles.right}>
-          <Column>
+        <Column>
+          <div className={styles.details}>
             <Row justifyContent="space-between">
               <Column>
-                <Text text={item.name} transform="uppercase" display="block" />
+                <Text text={item.name} transform="uppercase" display="block" weight="bold" />
                 <Text text={item.description} display="block" />
               </Column>
               <Column>
@@ -114,22 +115,22 @@ const ViewItem = ({ onModalAction, onCloseModalAction, item }) => {
             />
             {sizeGuide && (
               <div className={styles.sizes}>
-                <Image src="https://i.ytimg.com/vi/n4-Q24a3DEM/maxresdefault.jpg"/>
+                <Image src="https://i.ytimg.com/vi/n4-Q24a3DEM/maxresdefault.jpg" />
               </div>
             )}
             <Button
               padded
               theme="black"
               disabled={!available}
-              onClick={ available ? () => onModalAction('add-item', {
-              itemId: item._id,
-              selectedOptions,
-            }) : null}
+              onClick={available ? () => onModalAction('add-item', {
+                itemId: item._id,
+                selectedOptions,
+              }) : null}
             >
               <Text text="Add to bag" transform="uppercase" color="white" />
             </Button>
-          </Column>
-        </div>
+          </div>
+        </Column>
       </Row>
 
       <div className={styles['view-item__close-button']}>

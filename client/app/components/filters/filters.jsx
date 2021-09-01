@@ -35,14 +35,13 @@ const Filters = ({
   sizeFilterSelected,
   colorFilterSelected,
   sortFilterSelected,
-  filtersApplied,
 }) => (
   <div className={styles.filters}>
-    <Row direction="row" justifyContent="space-between">
+    <Row direction="row" justifyContent="space-between" alignItems="center">
       <Column>
-        <Text text="Filter by" weight="bold" size="semismall" />
+        <Text text="Filter by" weight="bold" size="small" />
         <div className={styles['box--left']}>
-          <Row direction="row" alignItems="center" justifyContent="space-between">
+          <Row direction="row" alignItems="center" space="small">
             <Column>
               <Dropdown
                 label={type.label}
@@ -68,8 +67,8 @@ const Filters = ({
               />
             </Column>
 
-            <Button round={false} theme="black" onClick={onApply} padded>
-              <Text text="apply" transform="uppercase" color="white" />
+            <Button round theme="black" onClick={onApply} >
+              <Icon icon="next" size="medium" round />
             </Button>
 
             <Button onClick={onReset}>
@@ -79,7 +78,7 @@ const Filters = ({
         </div>
       </Column>
       <Column>
-        <Text text="Sort by" weight="bold" size="semismall" />
+        <Text text="Sort by" weight="bold" size="small" />
         <div className={styles.box}>
           <Dropdown
             label={sort.label}

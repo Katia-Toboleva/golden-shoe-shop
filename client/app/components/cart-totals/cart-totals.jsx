@@ -28,13 +28,13 @@ const CartTotals = ({
           <Text
             text="subtotal"
             transform="capitalize"
-            size="medium"
+            size="small"
           />
         </Column>
         <Column>
           <Text
             text={`£ ${subtotal}`}
-            size="medium"
+            size="small"
           />
         </Column>
       </Row>
@@ -46,13 +46,13 @@ const CartTotals = ({
           <Text
             text="sales tax"
             transform="capitalize"
-            size="medium"
+            size="small"
           />
         </Column>
         <Column>
           <Text
             text={`£ ${tax}`}
-            size="medium"
+            size="small"
           />
         </Column>
       </Row>
@@ -67,19 +67,19 @@ const CartTotals = ({
     {isDiscountApplied && (
       <div className={styles['cart-totals__item']}>
         <Row justifyContent="space-between">
-          <Column>
+          <Column shrink>
             <Text
               text="discount"
               transform="capitalize"
-              size="medium"
+              size="small"
               weight="bold"
             />
           </Column>
-          <Column>
+          <Column grow>
             <Text
               text={`£ -${discount}`}
               transform="uppercase"
-              size="medium"
+              size="small"
             />
           </Column>
         </Row>
@@ -91,7 +91,7 @@ const CartTotals = ({
           <Text
             text="total"
             transform="uppercase"
-            size="x-large"
+            size="medium"
             weight="bold"
           />
         </Column>
@@ -99,7 +99,7 @@ const CartTotals = ({
           <Text
             text={`£ ${total}`}
             transform="uppercase"
-            size="medium"
+            size="small"
           />
         </Column>
       </Row>
@@ -118,6 +118,7 @@ const CartTotals = ({
         color="white"
         text="checkout now"
         transform="uppercase"
+        size="semismall"
       />
     </Button>
   </div>

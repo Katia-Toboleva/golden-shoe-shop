@@ -14,7 +14,7 @@ const Category = ({
   url,
   onClick,
 }) => (
-  <div className={styles.container} onClick={onClick}>
+  <div className={styles.container} onClick={() => onClick(category)}>
     <div className={styles[`category category__${index}`]} style={getInlineStyles(url)} />
     <div className={styles.cat}>
       <Text text={category} transform="uppercase"/>

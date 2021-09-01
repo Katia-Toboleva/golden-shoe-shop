@@ -1,5 +1,5 @@
 .view-item {
-  padding: 1.5em;
+  padding: 4em;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -29,13 +29,15 @@
 
   &__close-button {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 10px;
+    right: 10px;
     width: 32px;
   }
 
-  .right {
-    margin-left: 20px;
+  .details {
+    & >:not(:last-child) {
+      margin-bottom: 1.5em;
+    }
   }
 
   .sizes {

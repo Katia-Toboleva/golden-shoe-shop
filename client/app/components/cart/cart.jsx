@@ -39,7 +39,7 @@ const Cart = ({ items, subtotal, onCheckoutButtonClick }) => {
 
   return (
     <div className={styles['cart']}>
-      <Text text="checkout" transform="uppercase" center weight="bold" display="block" />
+      <Text text="checkout" transform="uppercase" weight="bold" display="block" size="medium" />
       <Row justifyContent="space-between">
         <Column>
           <Row direction="column" space="medium">

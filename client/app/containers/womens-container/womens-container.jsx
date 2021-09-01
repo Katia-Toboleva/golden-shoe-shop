@@ -119,7 +119,7 @@ const WomensContainer = (props) => {
   return (
     <>
       <DefaultPageWrapper
-        pageActive="women"
+        pageActive="womens"
       >
         <Filters
           onFilterClick={handleFilterClick}

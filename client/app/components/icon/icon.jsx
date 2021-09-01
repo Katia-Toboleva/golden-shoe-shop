@@ -28,7 +28,7 @@ const Icon = ({
     <i dangerouslySetInnerHTML={{ __html: glyphs[icon] }} />
     {(icon === 'cart' && !!items) && (
       <div className={styles.count}>
-        <Text text={items} size="medium" />
+        <Text text={items} size="semismall" />
       </div>
     )}
   </div>

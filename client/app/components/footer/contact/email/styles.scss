@@ -11,3 +11,9 @@
 input:focus {
   outline: 0;
 }
+
+.email {
+  >:not(:last-child) {
+    margin-bottom: 1em;
+  }
+}

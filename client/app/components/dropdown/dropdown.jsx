@@ -15,11 +15,12 @@ const Dropdown = ({
   return (
     <div className={cx('container', {
       'no-margin': label === 'sort',
+      'container--sort': label === 'sort',
       active: filterSelected,
     })}
     >
       <div className={styles.dropdown} onClick={() => setOpen(!open)}>
-        <Text text={filterSelected || label} transform="capitalize" />
+        <Text text={filterSelected || label} transform="capitalize" size="semismall" />
         <div className={styles.icon}>
           <Icon icon="chevron" theme="black" />
         </div>

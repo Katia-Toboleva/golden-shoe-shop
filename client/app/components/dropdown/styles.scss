@@ -2,6 +2,10 @@
   position: relative;
   margin-right: 5px;
 
+  &--sort {
+    min-width: 100px;
+  }
+
   .dropdown {
     display: flex;
     align-items: center;
@@ -23,4 +27,5 @@
   &.active {
     background-color: rgba(grey, .2);
   }
+
 }

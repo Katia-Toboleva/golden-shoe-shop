@@ -3,7 +3,8 @@
   height: 60px;
   position: fixed;
   bottom: 20px;
-  right: 50px;
+  right: 20px;
+  user-select: none;
 
   .chat {
     height: 200px;

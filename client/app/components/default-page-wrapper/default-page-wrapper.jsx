@@ -10,10 +10,11 @@ import {
 } from '@components';
 
 const DefaultPageWrapper = withRouter(({
+  pageActive,
   children,
   history,
 }) => {
-  const [pageActive, setPageActive] = useState('home');
+  const [page, setPageActive] = useState(pageActive);
   const [cartItemsCount, setCartItemsCount] = useState(0);
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -64,7 +65,7 @@ const DefaultPageWrapper = withRouter(({
   };
 
   return (
-    <Container>
+    <>
       <Header
         onCartClick={handleCartClick}
         onHomeClick={handleHomeClick}
@@ -72,13 +73,13 @@ const DefaultPageWrapper = withRouter(({
         onSignInClick={handleSignInClick}
         itemsInCart={cartItemsCount}
       />
-      <Nav onNavClick={handleNavClick} pageActive={pageActive} />
+      <Nav onNavClick={handleNavClick} pageActive={page} />
       <div>
         <div>{children}</div>
       </div>
       <Footer onFooterClick={handleFooterClick}/>
       <Chat />
-    </Container>
+    </>
   );
 });
 

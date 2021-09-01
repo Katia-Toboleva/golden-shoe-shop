@@ -55,66 +55,66 @@
   }
 
   &--space-horizontal-xsmall {
-    margin-left: -5px;
+    margin-left: -0.3em;
 
     >* {
-      padding-left: 5px;
+      padding-left: 0.3em;
     }
   }
 
   &--space-horizontal-small {
-    margin-left: -10px;
+    margin-left: -0.75em;
 
     >* {
-      padding-left: 10px;
+      padding-left: 0.75em;
     }
   }
 
   &--space-horizontal-medium {
-    margin-left: -20px;
+    margin-left: -1.25em;
 
     >* {
-      padding-left: 20px;
+      padding-left: 1.25em;
     }
   }
 
   &--space-horizontal-large {
-    margin-left: -30px;
+    margin-left: -1.5em;
 
     >* {
-      padding-left: 30px;
+      padding-left: 1.5em;
     }
   }
 
   &--space-vertical-xsmall {
-    margin-bottom: -5px;
+    margin-bottom: -0.3em;
 
     >* {
-      padding-left: 5px;
+      padding-left: 0.3em;
     }
   }
 
   &--space-vertical-small {
-    margin-bottom: -10px;
+    margin-bottom: -0.75em;
 
     >* {
-      padding-bottom: 10px;
+      padding-bottom: 0.75em;
     }
   }
 
   &--space-vertical-medium {
-    margin-bottom: -20px;
+    margin-bottom: -1.25em;
 
     >* {
-      padding-bottom: 20px;
+      padding-bottom: 1.25em;
     }
   }
 
   &--space-vertical-large {
-    margin-bottom: -30px;
+    margin-bottom: -1.5em;
 
     >* {
-      padding-bottom: 30px;
+      padding-bottom: 1.5em;
     }
   }
 }

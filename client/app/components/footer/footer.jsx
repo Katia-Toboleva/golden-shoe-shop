@@ -39,7 +39,7 @@ const options = [
 const Footer = ({onFooterClick}) => {
   return (
     <div className={styles.container}>
-      <Row direction="row" justifyContent="space-evenly">
+      <Row direction="row" space="medium">
         {options.map((item) => (
           <Column key={item.title}>
             <Text
@@ -47,20 +47,23 @@ const Footer = ({onFooterClick}) => {
               transform="capitalize"
               weight="bold"
               size="semismall"
+              color="regular-grey"
             />
             <div className={styles.links}>
-              {item.links.map((link) => (
-                <Column key={link}>
-                  <Button
-                    round={false}
-                    onClick={() => onFooterClick(link)}
-                    hoverOpacity
-                    justifyContent="start"
-                  >
-                    <Text text={link} size="small"/>
-                  </Button>
-                </Column>
-              ))}
+              <Row direction="column" space="small" >
+                {item.links.map((link) => (
+                  <Column key={link}>
+                    <Button
+                      round={false}
+                      onClick={() => onFooterClick(link)}
+                      hoverOpacity
+                      justifyContent="start"
+                    >
+                      <Text text={link} size="xsmall" color="regular-grey" />
+                    </Button>
+                  </Column>
+                ))}
+              </Row>
             </div>
           </Column>
         ))}

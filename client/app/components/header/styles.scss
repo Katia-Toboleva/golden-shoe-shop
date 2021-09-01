@@ -1,7 +1,18 @@
+@import 'globals.scss';
+
 .header {
-  padding: 1em;
-  
-  .actions {
-    width: 60px;
+  padding: 0 1em;
+}
+
+
+@include viewport($size: tablet) {
+  .header {
+    padding: 0;
+  }
+}
+
+@include viewport($size: desktop) {
+  .header {
+    padding: 0;
   }
 }

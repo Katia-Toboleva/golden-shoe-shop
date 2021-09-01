@@ -2,6 +2,7 @@
 
 .container {
   margin: auto;
+  margin-bottom: 4em;
 }
 
 @include viewport($size: tablet) {

@@ -25,7 +25,7 @@ const DeliveryOptions = ({ onOption, optionSelected }) => {
   return (
     <div className={styles.dropDown}>
       <div className={styles.button} onClick={() => setOpen(!open)}>
-        <Text text="Delivery options" />
+        <Text text="Delivery options" size="small" />
         <Icon icon="chevron" theme="black" />
       </div>
       {open && (
@@ -46,7 +46,7 @@ const DeliveryOptions = ({ onOption, optionSelected }) => {
                   </div>
                 </Column>
                 <Column shrink>
-                  <Text text={`£ ${item.cost}`} />
+                  <Text text={`£ ${item.cost}`} weight="bold" />
                 </Column>
               </Row>
             </div>

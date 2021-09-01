@@ -17,30 +17,32 @@ const Header = ({
   return (
     <div className={styles.header}>
       <Row direction="row" alignItems="center" justifyContent="space-between">
-        <Column>
-          <Button onClick={onSignInClick}>
-            <Text text="Sign in" transform="uppercase"/>
+        <Column shrink>
+          <Button onClick={onSignInClick} border="grey" padded>
+            <Text text="Sign in" transform="uppercase" size="semismall" />
           </Button>
         </Column>
-        <Column>
+        <Column grow>
           <Button onClick={onHomeClick}>
             <Logo size="big"/>
           </Button>
         </Column>
-        <div className={styles.actions}>
-          <Row direction="row" alignItems="center" justifyContent="space-between">
-            <Column>
-              <Button onClick={onSearchClick}>
-                <Icon icon="search" theme="grey" size="medium"/>
-              </Button>
-            </Column>
-            <Column>
-              <Button onClick={onCartClick}>
-                <Icon icon="cart" theme="grey" size="large" items={itemsInCart}/>
-              </Button>
-            </Column>
-          </Row>
-        </div>
+        <Column shrink>
+          <div className={styles.actions}>
+            <Row direction="row" alignItems="center" space="medium">
+              <Column shrink>
+                <Button onClick={onSearchClick}>
+                  <Icon icon="search" theme="grey" size="large"/>
+                </Button>
+              </Column>
+              <Column grow>
+                <Button onClick={onCartClick}>
+                  <Icon icon="cart" theme="grey" size="x-large" items={itemsInCart}/>
+                </Button>
+              </Column>
+            </Row>
+          </div>
+        </Column>
       </Row>
     </div>
   );
