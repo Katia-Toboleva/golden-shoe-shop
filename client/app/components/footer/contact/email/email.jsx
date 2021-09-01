@@ -6,11 +6,11 @@ const Email = ({onEmailChange}) => {
   return (
     <div className={styles.email}>
       <div>
-        <Text text="Sign up and get 10% OFF" weight="bold" transform="uppercase" />
+        <Text text="Sign up and get 10% OFF" weight="bold" transform="uppercase" size="semismall" />
       </div>
       <div className={styles.container}>
         <input placeholder="enter your email" onChange={onEmailChange}/>
-        <Text text="Subscribe" weight="bold" size="small"/>
+        <Text text="Subscribe" weight="bold" size="semismall"/>
       </div>
     </div>
   );
