@@ -46,24 +46,24 @@ const Questions = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.title}>
-        <Text text="FAQs" weight="bold" size="xlarge"/>
-      </div>
       <div className={styles.body}>
+        <div className={styles.title}>
+          <Text text="FAQs" weight="bold" size="medium" />
+        </div>
         {questions.map((item) => (
           <>
             <div className={styles.question} onClick={() => handleItemClick(item.question)}>
-              <Text text={item.question} weight="bold" size="large" />
-              <Text text={itemsClicked.includes(item.question) ? '-' : '+'} wight="bold" size="large" />
+              <Text text={item.question}  size="medium" />
+              <Text text={itemsClicked.includes(item.question) ? '-' : '+'} wight="bold" size="small" />
             </div>
             {itemsClicked.includes(item.question) && (
               <div className={styles.answer}>
                 {item.answer ? (
                   <>
-                    <p>{item.answer}</p>
+                    <Text text={item.answer} size="xsmall" />
                     <span className={styles.link}>{item.link ? item.link : ''}</span>
                   </>
-                ) : <img src={item.image} alt="image" /> }
+                ) : <img src={item.image} alt="image" />}
               </div>
             )}
           </>

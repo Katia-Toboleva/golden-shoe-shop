@@ -57,7 +57,7 @@ const CartTotals = ({
         </Column>
       </Row>
     </div>
-    
+
     <div className={styles['cart-totals__item']}>
       <DeliveryOptions
         onOption={onOption}

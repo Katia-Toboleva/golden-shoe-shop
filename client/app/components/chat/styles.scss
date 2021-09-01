@@ -32,5 +32,9 @@
       width: 200px;
       margin-top: 20px;
     }
+
+    &>:not(:last-child) {
+      margin-bottom: 5px;
+    }
   }
 }

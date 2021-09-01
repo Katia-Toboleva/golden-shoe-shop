@@ -38,7 +38,7 @@ const CartItem = ({
       </Column>
       <Column>
         <div className={styles['cart-item__details']}>
-          <Row>
+          <Row alignItems="center">
             <Column grow>
               <Text
                 text={name}
@@ -55,6 +55,7 @@ const CartItem = ({
                 weight="bold"
                 decoration={!isItemAvailable ? 'line-through' : ''}
                 color={!isItemAvailable ? 'grey' : 'black'}
+                size="small"
               />
             </Column>
           </Row>

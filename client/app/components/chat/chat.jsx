@@ -29,7 +29,7 @@ const Chat = withRouter(({ active, history }) => {
         })}>
           {!active && (
             <>
-              <Text text="Sorry we are not currently online " />
+              <Text text="Sorry we are currently not online " />
               <Text text="Customer service times 9.00-17.00" />
               <div className={styles.buttons}>
                 <Button onClick={handleFaq} theme="black" padded>
