@@ -91,7 +91,7 @@ const ViewItem = ({ onModalAction, onCloseModalAction, item }) => {
                 <Text text={item.description} display="block" />
               </Column>
               <Column>
-                <Text text={`£${item.price}`} display="block" weight="bold" />
+                <Text text={`£${item.price}`} display="block" weight="bold" size="medium" />
               </Column>
             </Row>
             <ColorSelector

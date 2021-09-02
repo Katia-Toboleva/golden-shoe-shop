@@ -17,7 +17,7 @@ const Item = ({ item, onItemClick, disabled }) => (
         <Text text={item.name} />
       </Column>
       <Column>
-        <Text text={`£ ${item.price}`} />
+        <Text text={`£ ${item.price}`} size="small" />
       </Column>
     </Row>
     {disabled && (
