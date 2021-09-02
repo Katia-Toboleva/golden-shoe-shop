@@ -47,7 +47,7 @@ Additional availability checks: for items added to the cart, once the user click
 //for demo: see Women's section, Item modal and Cart
 
 ### Filtering and sorting
-Filtering is implemented in the endpoint /items. By choosing filters in UI, the user can get items according to specific type, colour and size. Several filters can be applied at the same time and trigerred and reset using buttons.
+Filtering is implemented in the endpoint /items. By choosing filters in UI, the user can get items according to specific type, colour and size (url is built dynamically with queryBuilder function). Several filters can be applied at the same time and trigerred and reset using buttons.
 </br>
 </br>
 Sorting is also implemented to sort items by price (low->high, high->low) and availability. This sorts the array of fetched items and can be used in combination with Filters applied.
@@ -55,7 +55,7 @@ Sorting is also implemented to sort items by price (low->high, high->low) and av
 //for demo: see Women's section
 
 ### Intuitive UI: item selection
-Improvements in the flow of choosing an item in UI: when clicking on a item, a model opens up where the user can see more information and photos of the shoe (currently implemented a carousel with 3 different perspectives) and in all  available colours and sizes. In addition, there is button that opens up a Size Guide. Once the size, colour and quantity are chosen, the item can be added to the cart.
+Improvements in the flow of choosing an item in UI: when clicking on a item, a model opens up where the user can see more information and photos of the shoe (currently implemented a carousel with 3 different perspectives) and in all  available colours and sizes. In addition, there is a button that opens up a Size Guide. Once the size, colour and quantity are chosen, the item can be added to the cart.
 </br>
 //for demo: see Item modal (opens on choosing an item in women's section)
 
@@ -76,4 +76,4 @@ React, React Hooks, React Router, Redux state management, JavaScript, APIs, Asyn
 ### Additional implementations
 In addition to current code of the task, I believe the following implementations would be beneficial:</br>
 
-- Additional testing with Jest could be implemented in order to check the logic of the filters and other utilities.
+- Additional testing with Jest and Enzyme could be implemented in order to check the logic of the filters and utilities.
