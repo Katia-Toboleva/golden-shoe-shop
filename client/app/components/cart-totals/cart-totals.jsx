@@ -67,7 +67,7 @@ const CartTotals = ({
     {isDiscountApplied && (
       <div className={styles['cart-totals__item']}>
         <Row justifyContent="space-between">
-          <Column shrink>
+          <Column grow>
             <Text
               text="discount"
               transform="capitalize"
@@ -75,7 +75,7 @@ const CartTotals = ({
               weight="bold"
             />
           </Column>
-          <Column grow>
+          <Column shrink>
             <Text
               text={`£ -${discount}`}
               transform="uppercase"
