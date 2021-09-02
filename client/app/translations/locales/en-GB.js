@@ -1,5 +1,3 @@
 export default {
-  // text: {
-  //   loading: 'Loading..',
-  // }
+  // NOTE: futher implementation of internationalization here
 };

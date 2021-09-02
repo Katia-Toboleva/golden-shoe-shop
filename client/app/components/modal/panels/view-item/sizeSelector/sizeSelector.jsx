@@ -1,9 +1,8 @@
 import React from 'react';
+import classnames from 'classnames/bind';
 import Text from '../../../../text';
 import Button from '../../../../button';
 import styles from './styles.scss';
-
-import classnames from 'classnames/bind';
 
 const cx = classnames.bind(styles);
 
@@ -34,10 +33,11 @@ const SizeSelector = ({
           <div
             onClick={getItemAvaialble(s) ? () => onSizeSelect(s) : null}
             className={cx('size', {
-            'active': s === sizeSelected,
-            'unAvailable': !getItemAvaialble(s),
-            'pointer': getItemAvaialble(s),
-          })}>
+              active: s === sizeSelected,
+              unAvailable: !getItemAvaialble(s),
+              pointer: getItemAvaialble(s),
+            })}
+          >
             <Text text={s} />
           </div>
         ))}

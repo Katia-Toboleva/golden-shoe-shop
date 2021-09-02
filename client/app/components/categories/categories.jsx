@@ -1,11 +1,8 @@
 import React from 'react';
-import classnames from 'classnames/bind';
 import {
-  Category, CategoryMaster, Row, Column,
+  Category, CategoryMaster,
 } from '@components';
 import styles from './categories.scss';
-
-const cx = classnames.bind(styles);
 
 const Categories = ({
   categories,
@@ -25,7 +22,7 @@ const Categories = ({
         />
       </div>
       {otherCat.map((category, index) => (
-        <div className={styles[`categories__item__${index + 1}`]}>
+        <div className={styles[`categories__item__${index + 1}`]} key={`$item-${category.category}`}>
           <Category
             index={index + 1}
             category={category.category}

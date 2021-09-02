@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import classnames from 'classnames/bind';
 import Icon from '../icon';
 import Button from '../button';
 import Image from '../image';
 import styles from './styles.scss';
 
-import classnames from 'classnames/bind';
 const cx = classnames.bind(styles);
 
 const Carousel = ({ images }) => {
@@ -44,9 +44,10 @@ const Carousel = ({ images }) => {
           <div
             onClick={() => handleFooterImageClick(ind)}
             className={cx('image', {
-            'active': index === ind,
-          })}>
-            <Image src={i}/>
+              active: index === ind,
+            })}
+          >
+            <Image src={i} />
           </div>
         ))}
       </div>

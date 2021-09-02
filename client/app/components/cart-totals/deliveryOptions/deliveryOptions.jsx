@@ -1,5 +1,7 @@
-import React, { useState} from 'react';
-import { Icon, Text, Row, Column } from '@components';
+import React, { useState } from 'react';
+import {
+  Icon, Text, Row, Column,
+} from '@components';
 import classnames from 'classnames/bind';
 import styles from './styles.scss';
 
@@ -33,8 +35,9 @@ const DeliveryOptions = ({ onOption, optionSelected }) => {
           {options.map((item) => (
             <div className={styles.option} onClick={() => onOption(Number(item.cost))}>
               <div className={cx('checkBox', {
-                'active' : optionSelected === item.cost,
-              })}>
+                active: optionSelected === item.cost,
+              })}
+              >
                 {item.cost === optionSelected && (
                   <Icon icon="checkMark" theme="white" />
                 )}

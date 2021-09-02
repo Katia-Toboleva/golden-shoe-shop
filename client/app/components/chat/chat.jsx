@@ -26,7 +26,8 @@ const Chat = withRouter(({ active, history }) => {
       {openChat && (
         <div className={cx('chat', {
           'center': !active,
-        })}>
+        })}
+        >
           {!active && (
             <>
               <Text text="Sorry we are currently not online " />

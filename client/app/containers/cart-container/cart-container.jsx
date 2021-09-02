@@ -1,6 +1,5 @@
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable no-await-in-loop */
-/* eslint-disable object-shorthand */
 import React, { useEffect, useState } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -41,13 +40,13 @@ const CartContainer = (props) => {
             if (itemIndex !== -1) {
               finalLatestObj = {
                 ...latestItemObj,
-                selectedOptions: selectedOptions,
+                selectedOptions,
                 isItemAvailable: true,
               };
             } else {
               finalLatestObj = {
                 ...latestItemObj,
-                selectedOptions: selectedOptions,
+                selectedOptions,
                 isItemAvailable: false,
               };
             }

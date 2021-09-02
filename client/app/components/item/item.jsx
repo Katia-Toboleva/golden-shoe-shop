@@ -8,7 +8,8 @@ const getInlineStyles = (url) => ({
 });
 
 const Item = ({ item, onItemClick, disabled }) => (
-  <div className={styles.item}
+  <div
+    className={styles.item}
     onClick={!disabled ? () => onItemClick(item._id) : null}
   >
     <div className={styles['item__image']} style={getInlineStyles(item.images[0].urls[0])} />
@@ -23,7 +24,7 @@ const Item = ({ item, onItemClick, disabled }) => (
     {disabled && (
       <div className={styles.disabled}>
         <div className={styles.message}>
-          <Text text="out of stock" size="small" transform="uppercase"/>
+          <Text text="out of stock" size="small" transform="uppercase" />
         </div>
       </div>
     )}

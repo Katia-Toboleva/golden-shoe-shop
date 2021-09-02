@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 
 import {
-  Container,
   Header,
   Nav,
   Footer,
@@ -46,11 +45,11 @@ const DefaultPageWrapper = withRouter(({
   };
 
   const handleSearchClick = () => {
-
+    // Note: further implementation of Search here
   };
 
   const handleSignInClick = () => {
-
+    // Note: further implementation of Sign in here
   };
 
   const handleNavClick = (value) => {

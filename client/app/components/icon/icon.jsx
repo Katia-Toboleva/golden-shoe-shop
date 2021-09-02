@@ -1,7 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import Text from '../text';
 import classnames from 'classnames/bind';
+import Text from '../text';
 
 import * as glyphs from './svg';
 
@@ -33,13 +32,6 @@ const Icon = ({
     )}
   </div>
 );
-
-Icon.propTypes = {
-  size: PropTypes.string,
-  icon: PropTypes.string,
-  round: PropTypes.bool,
-  theme: PropTypes.string,
-};
 
 Icon.defaultProps = {
   size: 'small',
