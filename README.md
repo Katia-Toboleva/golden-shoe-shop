@@ -26,9 +26,20 @@ The app consists of a proposal for a Shoe company that wants to update their exi
 4. View the project in the browser: `npm start`
 
 ## Demo:
-1.
+1. Home
+ ![home](https://user-images.githubusercontent.com/66952678/131909130-ea0a16e7-39c3-4238-940a-941e5b5f4c40.gif)
 
-2.
+2. Women's section, filtering
+ ![womens-filters](https://user-images.githubusercontent.com/66952678/131909225-d5d29f62-12c8-44b4-9448-e89ac815f7d0.gif)
+
+3. Item modal, item selection
+ ![item-modal](https://user-images.githubusercontent.com/66952678/131909275-414b2eb8-da69-480a-b2f7-b183cf01e958.gif)
+
+4. Shopping cart/checkout
+  ![cart](https://user-images.githubusercontent.com/66952678/131909339-e4de3235-347a-4633-b5df-5efa6b6d42a0.gif)
+
+5. Chat and faqs
+  ![faq](https://user-images.githubusercontent.com/66952678/131909426-5874c143-1df5-4fa1-b74f-c2f681597eef.gif)
 
 ## Functionality and features:
 The task is implemented as a SPA written using ReactJS and NodeJS. The data is saved with MongoDB and is fetched by API endpoints (/categories and /items). The app state is managed by Redux that is accessed by containers and the project is set up using Webpack.
